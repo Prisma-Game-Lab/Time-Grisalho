@@ -276,7 +276,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 113271054}
-        m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
+        m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
         m_MethodName: GoToScene
         m_Mode: 1
         m_Arguments:
@@ -334,9 +334,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 113271049}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b670d72de15d9a84883ba82427b5c2b8, type: 3}
+  m_Script: {fileID: 11500000, guid: e43c2c1a12c2d344e8f15ebd005e58a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: Game
 --- !u!1 &374380715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,7 +1167,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1315531276}
-        m_TargetAssemblyTypeName: OptionsButton, Assembly-CSharp
+        m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
         m_MethodName: GoToScene
         m_Mode: 1
         m_Arguments:
@@ -1224,9 +1225,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1315531271}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 003ac7314cecd2c47b4abc97aac73ec7, type: 3}
+  m_Script: {fileID: 11500000, guid: e43c2c1a12c2d344e8f15ebd005e58a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: Options
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ExitButton : MonoBehaviour
 {
     public void GoToScene()
     {
+        Application.Quit();
         Debug.Log("saiu do jogo");
     }
 }
