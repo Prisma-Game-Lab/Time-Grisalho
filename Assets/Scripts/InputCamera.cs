@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class InputCamera : MonoBehaviour
 {
     Vector3 posMouse;
-    public GameObject camera_player, areaFoto, alvo; // camera que o player puxa pra tirar foto
+    public GameObject camera_player, areaFoto, alvo; // camera que o player puxa pra tirar foto, area efetiva da foto, alvo da foto
     private Vector2 topLeft, bottomRight;
+    public TextMeshProUGUI txtBtn_LigaDeslCam;
 
     private void cameraSegueMouse() 
     {
@@ -26,7 +29,7 @@ public class InputCamera : MonoBehaviour
 
     private void tiraFoto()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(1))
         {
             topLeft = areaFoto.GetComponent<BoxCollider2D>().bounds.min;
             bottomRight = areaFoto.GetComponent<BoxCollider2D>().bounds.max;
@@ -40,9 +43,12 @@ public class InputCamera : MonoBehaviour
             {
                 Debug.Log("tirou foto errado!");
             }
+            txtBtn_LigaDeslCam.text = "Abrir\nCâmera";
             camera_player.SetActive(false);
         }
     }
+
+    
 
     private void Start()
     {
