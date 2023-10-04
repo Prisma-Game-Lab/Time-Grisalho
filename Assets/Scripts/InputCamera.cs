@@ -27,6 +27,7 @@ public class InputCamera : MonoBehaviour
         yield return new WaitForSecondsRealtime(5);
     }
 
+
     private void tiraFoto()
     {
         if(Input.GetMouseButtonDown(1))
@@ -35,9 +36,9 @@ public class InputCamera : MonoBehaviour
             bottomRight = areaFoto.GetComponent<BoxCollider2D>().bounds.max;
             if (Physics2D.OverlapArea(topLeft, bottomRight, LayerMask.GetMask("Alvo")))
             {
-                Debug.Log("tirou foto certo!");
-                StartCoroutine(waiter());
-                SceneManager.LoadScene("MainMenu");
+                    Debug.Log("tirou foto certo!");
+                    StartCoroutine(waiter());
+                    SceneManager.LoadScene("MainMenu");
             } 
             else
             {
