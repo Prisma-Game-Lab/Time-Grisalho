@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ScenesManager : MonoBehaviour
 {
     [SerializeField]
-    private string nextScene;
+    public string nextScene;
     public void GoToScene()
     {
         SceneManager.LoadScene(nextScene);
