@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class AlbumLayoutScript : MonoBehaviour
@@ -22,8 +21,8 @@ public class AlbumLayoutScript : MonoBehaviour
         {
             var newButton = Instantiate(buttonPrefab);
             newButton.transform.SetParent(gameObject.transform);
+            newButton.transform.GetChild(0).GetComponent<TMP_Text>().text = "Fase " + (i + 1).ToString();
             newButton.GetComponent<ScenesManager>().nextScene = "Fase " + (i + 1).ToString();
-            newButton.transform.GetChild(0);
         }
     }
 }
