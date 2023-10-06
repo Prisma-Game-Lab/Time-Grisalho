@@ -198,6 +198,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164764433}
   m_CullTransparentMesh: 1
+--- !u!1 &1346203736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1346203738}
+  - component: {fileID: 1346203737}
+  m_Layer: 0
+  m_Name: Troca Cena
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1346203737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346203736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e43c2c1a12c2d344e8f15ebd005e58a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: Album
+--- !u!4 &1346203738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346203736}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 546.2925, y: 261.7388, z: 2.1849737}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1491402183
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,6 +323,7 @@ GameObject:
   - component: {fileID: 1509720545}
   - component: {fileID: 1509720544}
   - component: {fileID: 1509720543}
+  - component: {fileID: 1509720547}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -387,6 +433,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1509720547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509720542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457d3c89ca9bdd641834b68b78b4a28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numDeFases: {fileID: 11400000, guid: 59a812e0dbc749c4c86a88861cc13f62, type: 2}
+  gerenciadorDeCena: {fileID: 0}
 --- !u!1 &1675381610
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,6 +873,18 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6364596569179810556, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1784858874}
+    - target: {fileID: 6364596569179810556, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AumentaNumeroDeFases
+      objectReference: {fileID: 0}
+    - target: {fileID: 6364596569179810556, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ConcluiFase, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7920225144100987373, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -893,13 +965,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5266303370545864058, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5184059516798378437, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 1784858870}
+      insertIndex: -1
+      addedObject: {fileID: 1784858874}
   m_SourcePrefab: {fileID: 100100000, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
 --- !u!224 &1784858868 stripped
 RectTransform:
@@ -911,7 +984,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5184059516798378437, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
   m_PrefabInstance: {fileID: 1784858867}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1784858870
+--- !u!114 &1784858874
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -924,6 +997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numDeFases: {fileID: 11400000, guid: 59a812e0dbc749c4c86a88861cc13f62, type: 2}
+  gerenciadorDeCena: {fileID: 0}
 --- !u!1001 &3470758570483877777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1058,3 +1132,4 @@ SceneRoots:
   - {fileID: 1685170062}
   - {fileID: 1491402186}
   - {fileID: 1509720546}
+  - {fileID: 1346203738}
