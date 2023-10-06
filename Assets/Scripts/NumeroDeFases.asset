@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b080137e852f440b6f3bf43588e1b2, type: 3}
   m_Name: NumeroDeFases
   m_EditorClassIdentifier: 
-  numeroDeFases: 1
+  numeroDeFases: 3
