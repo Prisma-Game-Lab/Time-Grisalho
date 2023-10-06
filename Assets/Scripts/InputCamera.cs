@@ -9,10 +9,11 @@ using TMPro;
 
 public class InputCamera : MonoBehaviour
 {
-    Vector3 posMouse;
-    public GameObject camera_player, areaFoto, alvo; // camera que o player puxa pra tirar foto, area efetiva da foto, alvo da foto
+    private Vector3 posMouse;
+    private GameObject camera_player, areaFoto; // camera que o player puxa pra tirar foto, area efetiva da foto, alvo da foto
     private Vector2 topLeft, bottomRight;
     public TextMeshProUGUI txtBtn_LigaDeslCam;
+    private ConcluiFase concluiFase;
 
     private void cameraSegueMouse() 
     {
@@ -38,13 +39,13 @@ public class InputCamera : MonoBehaviour
             {
                     Debug.Log("tirou foto certo!");
                     StartCoroutine(waiter());
-                    SceneManager.LoadScene("MainMenu");
+                    concluiFase.AumentaNumeroDeFases();
             } 
             else
             {
                 Debug.Log("tirou foto errado!");
             }
-            txtBtn_LigaDeslCam.text = "Abrir\nCâmera";
+            //txtBtn_LigaDeslCam.text = "Abrir\nCâmera";
             camera_player.SetActive(false);
         }
     }
@@ -53,6 +54,9 @@ public class InputCamera : MonoBehaviour
 
     private void Start()
     {
+        camera_player = GameObject.Find("Camera");
+        areaFoto = GameObject.Find("AreaFoto");
+        concluiFase = FindAnyObjectByType<ConcluiFase>();
         camera_player.SetActive(false);
     }
     
