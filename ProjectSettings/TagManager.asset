@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Alvo
+  - Background
   layers:
   - Default
   - TransparentFX

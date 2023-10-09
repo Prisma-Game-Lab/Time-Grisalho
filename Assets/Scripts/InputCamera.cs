@@ -14,10 +14,14 @@ public class InputCamera : MonoBehaviour
     private Vector2 topLeft, bottomRight;
     public TextMeshProUGUI txtBtn_LigaDeslCam;
     private ConcluiFase concluiFase;
+    private SpriteRenderer background;
+    [SerializeField]
+    private float limite;
+    [SerializeField]
+    private float speed;
 
-    private void cameraSegueMouse() 
+    private void cameraSegueMouse()
     {
-        posMouse = Input.mousePosition;
         posMouse.z = Camera.main.nearClipPlane;
         posMouse = Camera.main.ScreenToWorldPoint(posMouse);
         camera_player.transform.position = posMouse;
@@ -31,26 +35,45 @@ public class InputCamera : MonoBehaviour
 
     private void tiraFoto()
     {
-        if(Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1))
         {
             topLeft = areaFoto.GetComponent<BoxCollider2D>().bounds.min;
             bottomRight = areaFoto.GetComponent<BoxCollider2D>().bounds.max;
             if (Physics2D.OverlapArea(topLeft, bottomRight, LayerMask.GetMask("Alvo")))
             {
-                    Debug.Log("tirou foto certo!");
-                    StartCoroutine(waiter());
-                    concluiFase.AumentaNumeroDeFases();
-            } 
+                Debug.Log("tirou foto certo!");
+                StartCoroutine(waiter());
+                concluiFase.AumentaNumeroDeFases();
+            }
             else
             {
                 Debug.Log("tirou foto errado!");
             }
-            //txtBtn_LigaDeslCam.text = "Abrir\nCâmera";
+            //txtBtn_LigaDeslCam.text = "Abrir\nCï¿½mera";
             camera_player.SetActive(false);
         }
     }
 
-    
+    private void mexeCamera()
+    {
+        Vector3 delta = Vector3.zero;
+        float posMousex = Camera.main.ScreenToWorldPoint(posMouse).x;
+        float dx = posMousex - transform.position.x;
+        if (dx > limite || dx < -limite)
+        {
+            if (transform.position.x < posMousex)
+            {
+                delta = Vector3.right;
+            }
+            if (transform.position.x > posMousex)
+            {
+                delta = Vector3.left;
+            }
+            // if(transform.position.x >)
+        }
+
+        transform.Translate(delta * Time.deltaTime * speed);
+    }
 
     private void Start()
     {
@@ -58,8 +81,9 @@ public class InputCamera : MonoBehaviour
         areaFoto = GameObject.Find("AreaFoto");
         concluiFase = FindAnyObjectByType<ConcluiFase>();
         camera_player.SetActive(false);
+        background = GameObject.FindGameObjectWithTag("Background").GetComponent<SpriteRenderer>();
     }
-    
+
     void Update()
     {
         if (!camera_player.activeSelf)
@@ -68,7 +92,8 @@ public class InputCamera : MonoBehaviour
             {
                 camera_player.SetActive(true);
             }
-        } else
+        }
+        else
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -77,5 +102,11 @@ public class InputCamera : MonoBehaviour
             cameraSegueMouse();
             tiraFoto();
         }
+    }
+    private void LateUpdate()
+    {
+        posMouse = Input.mousePosition;
+        mexeCamera();
+        Debug.Log(background.sprite.border.x);
     }
 }
