@@ -75,7 +75,7 @@ public class InputCamera : MonoBehaviour
         transform.Translate(delta * Time.deltaTime * speed);
     }
 
-    private void Start()
+    private void Awake()
     {
         camera_player = GameObject.Find("Camera");
         areaFoto = GameObject.Find("AreaFoto");

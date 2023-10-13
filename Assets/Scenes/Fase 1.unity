@@ -1341,6 +1341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db740c5432b34e4d9c7c78b9e004ab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera_player: {fileID: 315266474}
   btn_ligaDeslCam: {fileID: 1949592242}
 --- !u!114 &1949592242
 MonoBehaviour:

@@ -7,7 +7,7 @@ using TMPro;
 
 public class LigaDesligaCam : MonoBehaviour
 {
-    private GameObject camera_player;
+    public GameObject camera_player;
     public Button btn_ligaDeslCam;
 
     private void ligaDesligaCamBtn()
@@ -25,10 +25,5 @@ public class LigaDesligaCam : MonoBehaviour
     private void Awake()
     {
         btn_ligaDeslCam.onClick.AddListener(ligaDesligaCamBtn);
-    }
-
-    private void Start()
-    {
-        camera_player = GameObject.Find("Camera");
     }
 }
