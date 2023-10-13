@@ -137,11 +137,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4042104369380036592, guid: c9f48ef7665c7c84ca593108a4bcbd0e, type: 3}
       propertyPath: speed
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4042104369380036592, guid: c9f48ef7665c7c84ca593108a4bcbd0e, type: 3}
       propertyPath: limite
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042104369380036592, guid: c9f48ef7665c7c84ca593108a4bcbd0e, type: 3}
+      propertyPath: tamanho
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5588888687713205801, guid: c9f48ef7665c7c84ca593108a4bcbd0e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -198,6 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 825939655}
   - component: {fileID: 825939656}
+  - component: {fileID: 825939657}
   m_Layer: 0
   m_Name: Illustration32
   m_TagString: Background
@@ -272,6 +277,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &825939657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825939654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4544f40b0910f84b916a375fdebb2ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  efeitoParallax: 0
 --- !u!1001 &1502121312
 PrefabInstance:
   m_ObjectHideFlags: 0

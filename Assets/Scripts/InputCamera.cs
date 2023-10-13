@@ -2,9 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using TMPro;
 
 public class InputCamera : MonoBehaviour
@@ -16,9 +13,7 @@ public class InputCamera : MonoBehaviour
     private ConcluiFase concluiFase;
     private SpriteRenderer background;
     [SerializeField]
-    private float limite;
-    [SerializeField]
-    private float speed;
+    private float limite, speed, tamanho;
 
     private void cameraSegueMouse()
     {
@@ -54,25 +49,25 @@ public class InputCamera : MonoBehaviour
         }
     }
 
-    private void mexeCamera()
+    private void MexeCamera()
     {
         Vector3 delta = Vector3.zero;
         float posMousex = Camera.main.ScreenToWorldPoint(posMouse).x;
         float dx = posMousex - transform.position.x;
+
         if (dx > limite || dx < -limite)
         {
-            if (transform.position.x < posMousex)
+            if (transform.position.x < posMousex && transform.position.x < tamanho)
             {
                 delta = Vector3.right;
             }
-            if (transform.position.x > posMousex)
+            if (transform.position.x > posMousex && transform.position.x > -tamanho)
             {
                 delta = Vector3.left;
             }
-            // if(transform.position.x >)
         }
 
-        transform.Translate(delta * Time.deltaTime * speed);
+        transform.Translate(Time.deltaTime * speed * delta);
     }
 
     private void Awake()
@@ -106,7 +101,6 @@ public class InputCamera : MonoBehaviour
     private void LateUpdate()
     {
         posMouse = Input.mousePosition;
-        mexeCamera();
-        Debug.Log(background.sprite.border.x);
+        MexeCamera();
     }
 }
