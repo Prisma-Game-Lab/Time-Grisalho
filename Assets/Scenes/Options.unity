@@ -424,7 +424,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.8
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -590,7 +590,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.8
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1736,7 +1736,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.8
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2158,7 +2158,6 @@ GameObject:
   - component: {fileID: 1792392803}
   - component: {fileID: 1792392802}
   - component: {fileID: 1792392801}
-  - component: {fileID: 1792392804}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2240,19 +2239,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1792392804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1792392800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0922392f2942cb45b4cca6702f322ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _clip: {fileID: 8300000, guid: ec6150f919c1323418ff6fc47a80e898, type: 3}
 --- !u!1 &1950472987
 GameObject:
   m_ObjectHideFlags: 0
@@ -2397,6 +2383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2013198442}
   - component: {fileID: 2013198443}
+  - component: {fileID: 2013198444}
   m_Layer: 5
   m_Name: Sliders
   m_TagString: Untagged
@@ -2441,6 +2428,23 @@ MonoBehaviour:
   _masterVolumeSlider: {fileID: 688098154}
   _musicVolumeSlider: {fileID: 673647825}
   _effectsVolumeSlider: {fileID: 1413293001}
+--- !u!114 &2013198444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013198441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bcaa35a79f54b74a8b95a0e2136d184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _musicSource: {fileID: 2093453223}
+  _effectSource: {fileID: 1369345412}
+  _masterVolumeSlider: {fileID: 688098154}
+  _musicVolumeSlider: {fileID: 673647825}
+  _effectsVolumeSlider: {fileID: 1413293001}
 --- !u!1 &2093453222
 GameObject:
   m_ObjectHideFlags: 0
@@ -2451,6 +2455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2093453224}
   - component: {fileID: 2093453223}
+  - component: {fileID: 2093453225}
   m_Layer: 0
   m_Name: Music Source
   m_TagString: Untagged
@@ -2569,6 +2574,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1667440284}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2093453225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093453222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0922392f2942cb45b4cca6702f322ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: ec6150f919c1323418ff6fc47a80e898, type: 3}
 --- !u!1 &2105392111
 GameObject:
   m_ObjectHideFlags: 0

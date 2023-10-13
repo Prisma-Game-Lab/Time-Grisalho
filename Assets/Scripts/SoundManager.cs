@@ -37,11 +37,13 @@ public class SoundManager : MonoBehaviour
 
     public void ChangeMusicVolume(float value)
     {
+        VolumesController.musicVolumeStatic = value;
         _musicSource.volume = value;
     }
 
     public void ChangeEffectsVolume(float value)
     {
+        VolumesController.effectsVolumeStatic = value;
         _effectSource.volume = value;
     }
 }
