@@ -76,7 +76,7 @@ public class InputCamera : MonoBehaviour
         areaFoto = GameObject.Find("AreaFoto");
         concluiFase = FindAnyObjectByType<ConcluiFase>();
         camera_player.SetActive(false);
-        background = GameObject.FindGameObjectWithTag("Background").GetComponent<SpriteRenderer>();
+        // background = GameObject.FindGameObjectWithTag("Background").GetComponent<SpriteRenderer>();
     }
 
     void Update()

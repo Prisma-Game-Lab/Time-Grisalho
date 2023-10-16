@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Background : MonoBehaviour
 {
-    private float startPos, length;
-    [SerializeField]
+    private float startPos;
     private GameObject cam;
     [SerializeField]
     private float efeitoParallax;
@@ -13,7 +12,6 @@ public class Background : MonoBehaviour
     private void Start()
     {
         startPos = transform.position.x;
-        length = GetComponent<SpriteRenderer>().bounds.size.x;
         cam = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
