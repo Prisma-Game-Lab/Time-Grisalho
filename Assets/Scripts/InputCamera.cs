@@ -72,7 +72,7 @@ public class InputCamera : MonoBehaviour
 
     private void Awake()
     {
-        camera_player = GameObject.Find("Camera");
+        camera_player = GameObject.Find("Camera Player");
         areaFoto = GameObject.Find("AreaFoto");
         concluiFase = FindAnyObjectByType<ConcluiFase>();
         camera_player.SetActive(false);
