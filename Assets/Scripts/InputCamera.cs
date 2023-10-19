@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class InputCamera : MonoBehaviour
 {
     private Vector3 posMouse;
-    private GameObject camera_player, areaFoto; // camera que o player puxa pra tirar foto, area efetiva da foto, alvo da foto
+    private GameObject camera_player, areaFoto, areaFotoUI; // camera que o player puxa pra tirar foto, area efetiva da foto, alvo da foto
     private Vector2 topLeft, bottomRight;
     public TextMeshProUGUI txtBtn_LigaDeslCam;
     private ConcluiFase concluiFase;
@@ -46,6 +47,7 @@ public class InputCamera : MonoBehaviour
             }
             //txtBtn_LigaDeslCam.text = "Abrir\nC�mera";
             camera_player.SetActive(false);
+            areaFotoUI.SetActive(false);
         }
     }
 
@@ -74,8 +76,11 @@ public class InputCamera : MonoBehaviour
     {
         camera_player = GameObject.Find("Camera Player");
         areaFoto = GameObject.Find("AreaFoto");
+        areaFotoUI = GameObject.Find("AreaFotoUI");
         concluiFase = FindAnyObjectByType<ConcluiFase>();
         camera_player.SetActive(false);
+        areaFotoUI.SetActive(false);
+
         // background = GameObject.FindGameObjectWithTag("Background").GetComponent<SpriteRenderer>();
     }
 
@@ -86,6 +91,7 @@ public class InputCamera : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 camera_player.SetActive(true);
+                areaFotoUI.SetActive(true);
             }
         }
         else
@@ -93,6 +99,7 @@ public class InputCamera : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 camera_player.SetActive(false);
+                areaFotoUI.SetActive(false);
             }
             cameraSegueMouse();
             tiraFoto();
