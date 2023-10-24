@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4544f40b0910f84b916a375fdebb2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  efeitoParallax: 0.8
+  efeitoParallax: 0.5
 --- !u!212 &1815112172
 SpriteRenderer:
   m_ObjectHideFlags: 0

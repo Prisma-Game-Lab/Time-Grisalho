@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 5010169980294044740}
   - component: {fileID: 7919503707753559639}
   - component: {fileID: 5399223042068476773}
-  - component: {fileID: 5618997607664816107}
+  - component: {fileID: 880880190099865224}
   m_Layer: 5
   m_Name: Fase_Button
   m_TagString: Untagged
@@ -256,9 +256,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5618997607664816107}
-        m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
-        m_MethodName: GoToScene
+      - m_Target: {fileID: 880880190099865224}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: Clique
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -268,7 +268,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5618997607664816107
+--- !u!114 &880880190099865224
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -277,7 +277,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6243316909687774751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e43c2c1a12c2d344e8f15ebd005e58a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 0522535528b76764e9ba046fd240fb70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: 
+  som: {fileID: 8300000, guid: 3e85b6cdfcbacb9479c186284770e5dc, type: 3}
+  proximaCena: 

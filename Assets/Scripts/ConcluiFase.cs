@@ -26,6 +26,6 @@ public class ConcluiFase : MonoBehaviour
     {
         numDeFases.numeroDeFases++;
         yield return new WaitForSeconds(timer);
-        gerenciadorDeCena.GoToScene();
+        gerenciadorDeCena.GoToScene("Album");
     }
 }

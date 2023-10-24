@@ -5,9 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ScenesManager : MonoBehaviour
 {
-    [SerializeField]
-    public string nextScene;
-    public void GoToScene()
+    public void GoToScene(string nextScene)
     {
         SceneManager.LoadScene(nextScene);
     }

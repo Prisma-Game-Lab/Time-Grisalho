@@ -14,7 +14,9 @@ public class InputCamera : MonoBehaviour
     private ConcluiFase concluiFase;
     private SpriteRenderer background;
     [SerializeField]
-    private float limite, speed, tamanho;
+    private float limite, speed;
+    private float tamanho;
+
 
     private void cameraSegueMouse()
     {
@@ -56,6 +58,7 @@ public class InputCamera : MonoBehaviour
         Vector3 delta = Vector3.zero;
         float posMousex = Camera.main.ScreenToWorldPoint(posMouse).x;
         float dx = posMousex - transform.position.x;
+        tamanho = background.sprite.bounds.size.x / 2 - 8.9f;
 
         if (dx > limite || dx < -limite)
         {
@@ -81,7 +84,7 @@ public class InputCamera : MonoBehaviour
         camera_player.SetActive(false);
         areaFotoUI.SetActive(false);
 
-        // background = GameObject.FindGameObjectWithTag("Background").GetComponent<SpriteRenderer>();
+        background = GameObject.FindGameObjectWithTag("Background").GetComponent<SpriteRenderer>();
     }
 
     void Update()

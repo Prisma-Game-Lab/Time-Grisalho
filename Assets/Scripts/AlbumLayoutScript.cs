@@ -22,7 +22,7 @@ public class AlbumLayoutScript : MonoBehaviour
             var newButton = Instantiate(buttonPrefab);
             newButton.transform.SetParent(gameObject.transform);
             newButton.transform.GetChild(0).GetComponent<TMP_Text>().text = "Fase " + (i + 1).ToString();
-            newButton.GetComponent<ScenesManager>().nextScene = "Fase " + (i + 1).ToString();
+            newButton.GetComponent<ButtonScript>().proximaCena = "Fase " + (i + 1).ToString();
         }
     }
 }
