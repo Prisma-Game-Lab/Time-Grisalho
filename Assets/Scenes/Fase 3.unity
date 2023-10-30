@@ -2068,7 +2068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numDeFases: {fileID: 11400000, guid: 59a812e0dbc749c4c86a88861cc13f62, type: 2}
   gerenciadorDeCena: {fileID: 0}
-  timer: 2
+  timer: 0
 --- !u!1 &1788438500
 GameObject:
   m_ObjectHideFlags: 0

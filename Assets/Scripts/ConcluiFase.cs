@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ConcluiFase : MonoBehaviour
 {
@@ -24,7 +25,11 @@ public class ConcluiFase : MonoBehaviour
 
     private IEnumerator Espera()
     {
-        numDeFases.numeroDeFases++;
+        string nomeFase = SceneManager.GetActiveScene().name;
+        if (numDeFases.numeroDeFases <= (nomeFase[nomeFase.Length - 1] - '0'))
+        {
+            numDeFases.numeroDeFases++;
+        }
         yield return new WaitForSeconds(timer);
         gerenciadorDeCena.GoToScene("Album");
     }

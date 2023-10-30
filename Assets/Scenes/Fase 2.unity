@@ -1043,6 +1043,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1442519878234088966, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
+      propertyPath: timer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2887246392991374610, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
       propertyPath: camera_player
       value: 
