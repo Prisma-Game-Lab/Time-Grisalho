@@ -27,7 +27,9 @@ public class InputCamera : MonoBehaviour
 
     private IEnumerator waiter()
     {
-        yield return new WaitForSecondsRealtime(5);
+        Debug.Log("Waiter started");
+        yield return new WaitForSecondsRealtime(10.0f);
+        Debug.Log("Waiter finished");
     }
 
 
@@ -40,12 +42,16 @@ public class InputCamera : MonoBehaviour
             if (Physics2D.OverlapArea(topLeft, bottomRight, LayerMask.GetMask("Alvo")))
             {
                 Debug.Log("tirou foto certo!");
+                Desativa_Ativa_CertoErrado.Instancia.Ativa_Certo_Errado(1);
                 StartCoroutine(waiter());
                 concluiFase.AumentaNumeroDeFases();
             }
             else
             {
                 Debug.Log("tirou foto errado!");
+                Desativa_Ativa_CertoErrado.Instancia.Ativa_Certo_Errado(2);
+                //StartCoroutine(waiter());
+                //Desativa_Ativa_CertoErrado.Instancia.Desativa_Certo_Errado(2);
             }
             //txtBtn_LigaDeslCam.text = "Abrir\nC�mera";
             camera_player.SetActive(false);
