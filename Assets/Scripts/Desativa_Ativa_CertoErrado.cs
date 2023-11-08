@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//colocar na MainCamera pra controlar os elementos 
 public class Desativa_Ativa_CertoErrado : MonoBehaviour
 {
     public static Desativa_Ativa_CertoErrado Instancia;

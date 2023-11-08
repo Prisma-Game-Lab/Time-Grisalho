@@ -16,6 +16,7 @@ public class InputCamera : MonoBehaviour
     [SerializeField]
     private float limite, speed;
     private float tamanho;
+    public float tempoDeEsperaFeedbackPositivo = 5.0f, tempoDeEsperaFeedbackNegativo = 5.0f;
 
 
     private void cameraSegueMouse()
@@ -25,11 +26,20 @@ public class InputCamera : MonoBehaviour
         camera_player.transform.position = posMouse;
     }
 
-    private IEnumerator waiter()
+    private IEnumerator waiter_certo()
     {
         Debug.Log("Waiter started");
-        yield return new WaitForSecondsRealtime(10.0f);
+        yield return new WaitForSecondsRealtime(tempoDeEsperaFeedbackPositivo);
         Debug.Log("Waiter finished");
+        concluiFase.AumentaNumeroDeFases();
+    }
+
+    private IEnumerator waiter_errado()
+    {
+        Debug.Log("Waiter started");
+        yield return new WaitForSecondsRealtime(tempoDeEsperaFeedbackNegativo);
+        Debug.Log("Waiter finished");
+        Desativa_Ativa_CertoErrado.Instancia.Desativa_Certo_Errado(2);
     }
 
 
@@ -43,15 +53,13 @@ public class InputCamera : MonoBehaviour
             {
                 Debug.Log("tirou foto certo!");
                 Desativa_Ativa_CertoErrado.Instancia.Ativa_Certo_Errado(1);
-                StartCoroutine(waiter());
-                concluiFase.AumentaNumeroDeFases();
+                StartCoroutine(waiter_certo());
             }
             else
             {
                 Debug.Log("tirou foto errado!");
                 Desativa_Ativa_CertoErrado.Instancia.Ativa_Certo_Errado(2);
-                //StartCoroutine(waiter());
-                //Desativa_Ativa_CertoErrado.Instancia.Desativa_Certo_Errado(2);
+                StartCoroutine(waiter_errado());
             }
             //txtBtn_LigaDeslCam.text = "Abrir\nC�mera";
             camera_player.SetActive(false);
