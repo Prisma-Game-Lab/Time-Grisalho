@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-public class ButtonScript : MonoBehaviour
+
+public class OptionsButton : MonoBehaviour
 {
 
     [SerializeField]
     private AudioClip som;
     private AudioSource fonte;
     private ScenesManager scenesManager;
-    [SerializeField]
-    public string proximaCena;
+    public static string cenaAnteriorOptions;
     private void Start()
     {
         scenesManager = FindObjectOfType<ScenesManager>();
@@ -20,11 +19,8 @@ public class ButtonScript : MonoBehaviour
 
     public void Clique()
     {
-        if (proximaCena == "Options")
-        {
-            OptionsButton.cenaAnteriorOptions = SceneManager.GetActiveScene().name;
-        }
-        scenesManager.GoToScene(proximaCena);
+        scenesManager.GoToScene(cenaAnteriorOptions);
         fonte.Play();
     }
 }
+
