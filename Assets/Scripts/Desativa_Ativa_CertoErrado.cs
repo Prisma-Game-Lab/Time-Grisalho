@@ -34,9 +34,7 @@ public class Desativa_Ativa_CertoErrado : MonoBehaviour
         }
         if (qual == 2)
         {
-            Debug.Log("AAAA");
             erradoUI.SetActive(true);
-            Debug.Log("AAAA");
         }
     }
 

@@ -52,12 +52,14 @@ public class InputCamera : MonoBehaviour
             if (Physics2D.OverlapArea(topLeft, bottomRight, LayerMask.GetMask("Alvo")))
             {
                 Debug.Log("tirou foto certo!");
+                SaveCameraFoto.Instancia.ShowsTakenPicture(SaveCameraFoto.Instancia.CaptureScreen());
                 Desativa_Ativa_CertoErrado.Instancia.Ativa_Certo_Errado(1);
                 StartCoroutine(waiter_certo());
             }
             else
             {
                 Debug.Log("tirou foto errado!");
+                SaveCameraFoto.Instancia.ShowsTakenPicture(SaveCameraFoto.Instancia.CaptureScreen());
                 Desativa_Ativa_CertoErrado.Instancia.Ativa_Certo_Errado(2);
                 StartCoroutine(waiter_errado());
             }

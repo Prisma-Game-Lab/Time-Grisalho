@@ -8,7 +8,7 @@ using TMPro;
 public class LigaDesligaCam : MonoBehaviour
 {
     public GameObject camera_player;
-    public GameObject areaFotoUI;
+    public GameObject camera__;
     public Button btn_ligaDeslCam;
 
     private void ligaDesligaCamBtn()
@@ -16,12 +16,12 @@ public class LigaDesligaCam : MonoBehaviour
         if (!camera_player.activeSelf)
         {
             camera_player.SetActive(true);
-            areaFotoUI.SetActive(true);
+            camera__.SetActive(true);
         }
         else
         {
             camera_player.SetActive(false);
-            areaFotoUI.SetActive(false);
+            camera__.SetActive(false);
         }
     }
 
