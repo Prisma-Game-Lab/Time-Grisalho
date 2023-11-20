@@ -20,7 +20,7 @@ public class ButtonScript : MonoBehaviour
 
     public void Clique()
     {
-        if (proximaCena == "Options")
+        if (proximaCena == "Options" && SceneManager.GetActiveScene().name != "Controles")
         {
             OptionsButton.cenaAnteriorOptions = SceneManager.GetActiveScene().name;
         }
