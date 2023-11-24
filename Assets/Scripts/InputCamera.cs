@@ -13,10 +13,17 @@ public class InputCamera : MonoBehaviour
     public TextMeshProUGUI txtBtn_LigaDeslCam;
     private ConcluiFase concluiFase;
     private SpriteRenderer background;
+
     [SerializeField]
     private float limite, speed;
     private float tamanho;
+
     public float tempoDeEsperaFeedbackPositivo = 5.0f, tempoDeEsperaFeedbackNegativo = 5.0f;
+
+    public int quantidadeDeFotos = 2; // SEMPRE TEM QUE SER MESMA QUANTIDADE DE ALVOS
+    [SerializeField] private List<bool> ljaTirouFotos = new List<bool>(); // para cada alvo na lista lAlvos indica se a foto ja foi tirada ou nao
+    private List<GameObject> lAlvos = new List<GameObject>(); // lista de alvos
+    [SerializeField] private List<Sprite> lfotosTiradas = new List<Sprite>(); //lista de sprites
 
 
     private void cameraSegueMouse()
@@ -51,10 +58,27 @@ public class InputCamera : MonoBehaviour
             bottomRight = areaFoto.GetComponent<BoxCollider2D>().bounds.max;
             if (Physics2D.OverlapArea(topLeft, bottomRight, LayerMask.GetMask("Alvo")))
             {
+                for(int i = 0; i < quantidadeDeFotos; i++)
+                {
+                    if (!ljaTirouFotos[i])
+                    {
+                        if (areaFoto.GetComponent<BoxCollider2D>().bounds.Intersects(lAlvos[i].GetComponent<CircleCollider2D>().bounds))
+                        {
+                            Debug.Log("tirou foto certo!");
+                            lfotosTiradas[i] = SaveCameraFoto.Instancia.CaptureScreen();
+                            SaveCameraFoto.Instancia.ShowsTakenPicture(SaveCameraFoto.Instancia.CaptureScreen());
+                            Desativa_Ativa_CertoErrado.Instancia.Ativa_Certo_Errado(1);
+                            StartCoroutine(waiter_certo());
+                            ljaTirouFotos[i] = true; break;
+                        }
+                    }
+                }
+                // ADICIONAR COMPARAÇÃO PRA SABER QUAL DOS ALVOS TIROU FOTO A PARTIR DAS LISTAS!!
+/*
                 Debug.Log("tirou foto certo!");
                 SaveCameraFoto.Instancia.ShowsTakenPicture(SaveCameraFoto.Instancia.CaptureScreen());
                 Desativa_Ativa_CertoErrado.Instancia.Ativa_Certo_Errado(1);
-                StartCoroutine(waiter_certo());
+                StartCoroutine(waiter_certo());*/
             }
             else
             {
@@ -91,6 +115,15 @@ public class InputCamera : MonoBehaviour
         transform.Translate(Time.deltaTime * speed * delta);
     }
 
+    private void InicializaJaTirouFotosAlvos()
+    {
+        for(int i = 0; i < quantidadeDeFotos; i++) {
+            ljaTirouFotos.Add(false);
+            lAlvos.Add(GameObject.Find("Alvo " +  (i + 1).ToString() ));
+            lfotosTiradas.Add(null);
+        }
+    }
+
     private void Awake()
     {
         camera_player = GameObject.Find("Camera Player");
@@ -99,6 +132,7 @@ public class InputCamera : MonoBehaviour
         concluiFase = FindAnyObjectByType<ConcluiFase>();
         camera_player.SetActive(false);
         camera__.SetActive(false);
+        InicializaJaTirouFotosAlvos();
 
         background = GameObject.FindGameObjectWithTag("Background").GetComponent<SpriteRenderer>();
     }
