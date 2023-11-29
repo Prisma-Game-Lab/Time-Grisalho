@@ -49,6 +49,14 @@ public class InputCamera : MonoBehaviour
         Desativa_Ativa_CertoErrado.Instancia.Desativa_Certo_Errado(2);
     }
 
+    private bool estaOverlaping()
+    {
+        if (Physics2D.OverlapArea(topLeft, bottomRight, LayerMask.GetMask("Alvo1")) && Physics2D.OverlapArea(topLeft, bottomRight, LayerMask.GetMask("Alvo2")))
+        {
+            return true;
+        }
+        return false;
+    }
 
     private void tiraFoto()
     {
@@ -56,9 +64,10 @@ public class InputCamera : MonoBehaviour
         {
             topLeft = areaFoto.GetComponent<BoxCollider2D>().bounds.min;
             bottomRight = areaFoto.GetComponent<BoxCollider2D>().bounds.max;
-            if (Physics2D.OverlapArea(topLeft, bottomRight, LayerMask.GetMask("Alvo")))
+            if (estaOverlaping())
             {
-                for(int i = 0; i < quantidadeDeFotos; i++)
+                Debug.Log("tirou foto certo!");
+                for (int i = 0; i < quantidadeDeFotos; i++)
                 {
                     if (!ljaTirouFotos[i])
                     {
