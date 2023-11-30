@@ -770,7 +770,7 @@ GameObject:
   - component: {fileID: 1280927093}
   - component: {fileID: 1280927095}
   - component: {fileID: 1280927094}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AreaFoto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1442,7 +1442,7 @@ MonoBehaviour:
   speed: 0
   tempoDeEsperaFeedbackPositivo: 1.34
   tempoDeEsperaFeedbackNegativo: 5
-  quantidadeDeFotos: 1
+  quantidadeDeFotos: 2
   ljaTirouFotos: 
   lfotosTiradas: []
 --- !u!114 &1675381615
