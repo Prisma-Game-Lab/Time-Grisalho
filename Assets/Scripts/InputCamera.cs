@@ -38,7 +38,11 @@ public class InputCamera : MonoBehaviour
         Debug.Log("Waiter started");
         yield return new WaitForSecondsRealtime(tempoDeEsperaFeedbackPositivo);
         Debug.Log("Waiter finished");
-        concluiFase.AumentaNumeroDeFases();
+        Desativa_Ativa_CertoErrado.Instancia.Desativa_Certo_Errado(1);
+        if (jaTirouTdsFotos())
+        {
+            concluiFase.AumentaNumeroDeFases();
+        }
     }
 
     private IEnumerator waiter_errado()
@@ -49,13 +53,34 @@ public class InputCamera : MonoBehaviour
         Desativa_Ativa_CertoErrado.Instancia.Desativa_Certo_Errado(2);
     }
 
-    private bool estaOverlaping()
+    private bool estaOverlapping()
     {
-        if (Physics2D.OverlapArea(topLeft, bottomRight, LayerMask.GetMask("Alvo1")) && Physics2D.OverlapArea(topLeft, bottomRight, LayerMask.GetMask("Alvo2")))
-        {
-            return true;
-        }
+        if (Physics2D.OverlapArea(topLeft, bottomRight, LayerMask.GetMask("Alvo"))) { return true; }
         return false;
+
+    }
+
+    private int qualEstaOverlapping()
+    {
+        for (int i = 0; i < quantidadeDeFotos; i++)
+        {
+            if (Physics2D.OverlapCircle(lAlvos[i].GetComponent<CircleCollider2D>().bounds.center, lAlvos[i].GetComponent<CircleCollider2D>().radius, LayerMask.GetMask("AreaFoto"))) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private bool jaTirouTdsFotos()
+    {
+        for(int i = 0; i < quantidadeDeFotos; i++)
+        {
+            if (!ljaTirouFotos[i])
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     private void tiraFoto()
@@ -64,30 +89,40 @@ public class InputCamera : MonoBehaviour
         {
             topLeft = areaFoto.GetComponent<BoxCollider2D>().bounds.min;
             bottomRight = areaFoto.GetComponent<BoxCollider2D>().bounds.max;
-            if (estaOverlaping())
+            if (estaOverlapping())
             {
-                Debug.Log("tirou foto certo!");
-                for (int i = 0; i < quantidadeDeFotos; i++)
+                // Debug.Log("tirou foto certo!");
+                int alvoAtual = qualEstaOverlapping();
+                if (!ljaTirouFotos[alvoAtual])
                 {
-                    if (!ljaTirouFotos[i])
-                    {
-                        if (areaFoto.GetComponent<BoxCollider2D>().bounds.Intersects(lAlvos[i].GetComponent<CircleCollider2D>().bounds))
-                        {
-                            Debug.Log("tirou foto certo!");
-                            lfotosTiradas[i] = SaveCameraFoto.Instancia.CaptureScreen();
-                            SaveCameraFoto.Instancia.ShowsTakenPicture(SaveCameraFoto.Instancia.CaptureScreen());
-                            Desativa_Ativa_CertoErrado.Instancia.Ativa_Certo_Errado(1);
-                            StartCoroutine(waiter_certo());
-                            ljaTirouFotos[i] = true; break;
-                        }
-                    }
+                    Debug.Log("tirou foto certo!");
+                    lfotosTiradas[alvoAtual] = SaveCameraFoto.Instancia.CaptureScreen();
+                    SaveCameraFoto.Instancia.ShowsTakenPicture(SaveCameraFoto.Instancia.CaptureScreen());
+                    Desativa_Ativa_CertoErrado.Instancia.Ativa_Certo_Errado(1);
+                    StartCoroutine(waiter_certo());
+                    ljaTirouFotos[alvoAtual] = true;
                 }
+                //for (int i = 0; i < quantidadeDeFotos; i++)
+                //{
+                //    if (!ljaTirouFotos[i])
+                //    {
+                //        if (areaFoto.GetComponent<BoxCollider2D>().bounds.Intersects(lAlvos[i].GetComponent<CircleCollider2D>().bounds))
+                //       {
+                //            Debug.Log("tirou foto certo!");
+                //            lfotosTiradas[i] = SaveCameraFoto.Instancia.CaptureScreen();
+                //            SaveCameraFoto.Instancia.ShowsTakenPicture(SaveCameraFoto.Instancia.CaptureScreen());
+                //            Desativa_Ativa_CertoErrado.Instancia.Ativa_Certo_Errado(1);
+                //            StartCoroutine(waiter_certo());
+                //           ljaTirouFotos[i] = true; break;
+                //        }
+                //    }
+                //}
                 // ADICIONAR COMPARAÇÃO PRA SABER QUAL DOS ALVOS TIROU FOTO A PARTIR DAS LISTAS!!
-/*
-                Debug.Log("tirou foto certo!");
-                SaveCameraFoto.Instancia.ShowsTakenPicture(SaveCameraFoto.Instancia.CaptureScreen());
-                Desativa_Ativa_CertoErrado.Instancia.Ativa_Certo_Errado(1);
-                StartCoroutine(waiter_certo());*/
+                /*
+                                Debug.Log("tirou foto certo!");
+                                SaveCameraFoto.Instancia.ShowsTakenPicture(SaveCameraFoto.Instancia.CaptureScreen());
+                                Desativa_Ativa_CertoErrado.Instancia.Ativa_Certo_Errado(1);
+                                StartCoroutine(waiter_certo());*/
             }
             else
             {

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Alvo
   - Background
+  - AreaFoto
   layers:
   - Default
   - TransparentFX
@@ -13,12 +14,12 @@ TagManager:
   - 
   - Water
   - UI
-  - Alvo
+  - Alvo1
   - AreaFoto
   - Background
   - VisaoDaCamera
   - CameraNaoVe
-  - 
+  - Alvo2
   - 
   - 
   - 
