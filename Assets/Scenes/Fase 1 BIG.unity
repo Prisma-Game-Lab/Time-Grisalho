@@ -305,7 +305,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 769
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 811b834a62a9b1b4cbfafb04e0ade2c2, type: 2}
   m_TargetDisplay: 0
@@ -1418,11 +1418,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!224 &1006204658 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7853724245612654031, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
-  m_PrefabInstance: {fileID: 696455673400204313}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1040219007
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1726,7 +1721,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 576
+    m_Bits: 769
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: ba37e1958e9e211499c185741b733bc6, type: 2}
   m_TargetDisplay: 0
@@ -1914,78 +1909,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1386420913
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1386420914}
-  - component: {fileID: 1386420916}
-  - component: {fileID: 1386420915}
-  m_Layer: 5
-  m_Name: "teste para a vis\xE3o da terceira camera"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1386420914
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1386420913}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.8998, y: 2.8998, z: 2.8998}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1006204658}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1139, y: 740}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1386420915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1386420913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Texture: {fileID: 8400000, guid: ba37e1958e9e211499c185741b733bc6, type: 2}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
---- !u!222 &1386420916
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1386420913}
-  m_CullTransparentMesh: 1
 --- !u!1 &1422367125
 GameObject:
   m_ObjectHideFlags: 0
@@ -3488,6 +3411,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 147
       objectReference: {fileID: 0}
+    - target: {fileID: 2465909746692693774, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3029
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465909746692693774, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -242
+      objectReference: {fileID: 0}
     - target: {fileID: 2887246392991374610, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
       propertyPath: camera__
       value: 
@@ -3607,10 +3538,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 768783322338167067, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 7853724245612654031, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1386420914}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
 --- !u!1660057539 &9223372036854775807
