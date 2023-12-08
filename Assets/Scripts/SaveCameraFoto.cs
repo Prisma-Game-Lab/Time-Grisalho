@@ -8,7 +8,7 @@ public class SaveCameraFoto : MonoBehaviour
     //get reference of camera from inspector
     private RenderTexture secondCameraRenderTexture;
     public static SaveCameraFoto Instancia;
-    private RawImage rawImage;
+    public RawImage rawImage { get; private set; }
 
     private void Awake()
     {
@@ -25,7 +25,7 @@ public class SaveCameraFoto : MonoBehaviour
         }
     }
 
-    public void ShowsTakenPicture(Sprite sprite)
+    public void ShowsTakenPicture(Sprite sprite, RawImage rawImage)
     {
         if (sprite != null)
         {
