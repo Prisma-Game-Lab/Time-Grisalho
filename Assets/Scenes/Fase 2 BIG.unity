@@ -2317,7 +2317,7 @@ MonoBehaviour:
   speed: 6
   tempoDeEsperaFeedbackPositivo: 1.34
   tempoDeEsperaFeedbackNegativo: 5
-  quantidadeDeFotos: 7
+  quantidadeDeFotos: 4
   ljaTirouFotos: 
   lfotosTiradas: []
 --- !u!114 &1675381615
