@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 253953573}
   - component: {fileID: 253953572}
   m_Layer: 6
-  m_Name: Alvo 7
+  m_Name: Alvo 8
   m_TagString: Alvo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -698,7 +698,7 @@ GameObject:
   - component: {fileID: 349694856}
   - component: {fileID: 349694855}
   - component: {fileID: 349694854}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Galera do Fut
   m_TagString: Alvo
   m_Icon: {fileID: 0}
@@ -2010,7 +2010,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 769
+    m_Bits: 2817
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: ba37e1958e9e211499c185741b733bc6, type: 2}
   m_TargetDisplay: 0
@@ -3182,7 +3182,7 @@ MonoBehaviour:
   speed: 6
   tempoDeEsperaFeedbackPositivo: 1.34
   tempoDeEsperaFeedbackNegativo: 5
-  quantidadeDeFotos: 7
+  quantidadeDeFotos: 8
   ljaTirouFotos: 
   lfotosTiradas: []
 --- !u!114 &1675381615
