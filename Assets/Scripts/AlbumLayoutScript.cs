@@ -6,7 +6,7 @@ using TMPro;
 
 public class AlbumLayoutScript : MonoBehaviour
 {
-    [SerializeField]
+    /*[SerializeField]
     private GameObject buttonPrefab;
     [SerializeField]
     private NumDeFases numDeFases;
@@ -24,5 +24,5 @@ public class AlbumLayoutScript : MonoBehaviour
             newButton.transform.GetChild(0).GetComponent<TMP_Text>().text = "Fase " + (i + 1).ToString();
             newButton.GetComponent<ButtonScript>().proximaCena = "Fase " + (i + 1).ToString();
         }
-    }
+    }*/
 }

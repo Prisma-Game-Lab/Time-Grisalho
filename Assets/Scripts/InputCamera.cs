@@ -7,6 +7,7 @@ using TMPro;
 
 public class InputCamera : MonoBehaviour
 {
+    public static InputCamera Instancia;
     private Vector3 posMouse;
     private GameObject camera_player, areaFoto, camera__; // camera que o player puxa pra tirar foto, area efetiva da foto, alvo da foto
     private Vector2 topLeft, bottomRight;
@@ -24,6 +25,7 @@ public class InputCamera : MonoBehaviour
     [SerializeField] private List<bool> ljaTirouFotos = new List<bool>(); // para cada alvo na lista lAlvos indica se a foto ja foi tirada ou nao
     private List<GameObject> lAlvos = new List<GameObject>(); // lista de alvos
     [SerializeField] private List<Sprite> lfotosTiradas = new List<Sprite>(); //lista de sprites
+    
 
 
     private void cameraSegueMouse()
@@ -96,9 +98,10 @@ public class InputCamera : MonoBehaviour
                 if (!ljaTirouFotos[alvoAtual])
                 {
                     Debug.Log("tirou foto certo!");
-                    lfotosTiradas[alvoAtual] = SaveCameraFoto.Instancia.CaptureScreen();
-                    SaveCameraFoto.Instancia.ShowsTakenPicture(SaveCameraFoto.Instancia.CaptureScreen());
+                    lfotosTiradas[alvoAtual] = GameObject.Find("Camera Reveladora").GetComponent<SaveCameraFoto>().CaptureScreen();
+                    GameObject.Find("Camera Reveladora").GetComponent<SaveCameraFoto>().ShowsTakenPicture(GameObject.Find("Camera Reveladora").GetComponent<SaveCameraFoto>().CaptureScreen(), GameObject.Find("Camera Reveladora").GetComponent<SaveCameraFoto>().rawImage);
                     Desativa_Ativa_CertoErrado.Instancia.Ativa_Certo_Errado(1);
+                    GameObject.Find("Canvas").GetComponent<FotosReveladasManager>().RevelaFoto(alvoAtual);
                     StartCoroutine(waiter_certo());
                     ljaTirouFotos[alvoAtual] = true;
                 }
@@ -127,7 +130,7 @@ public class InputCamera : MonoBehaviour
             else
             {
                 Debug.Log("tirou foto errado!");
-                SaveCameraFoto.Instancia.ShowsTakenPicture(SaveCameraFoto.Instancia.CaptureScreen());
+                SaveCameraFoto.Instancia.ShowsTakenPicture(SaveCameraFoto.Instancia.CaptureScreen(), SaveCameraFoto.Instancia.rawImage);
                 Desativa_Ativa_CertoErrado.Instancia.Ativa_Certo_Errado(2);
                 StartCoroutine(waiter_errado());
             }
@@ -170,6 +173,16 @@ public class InputCamera : MonoBehaviour
 
     private void Awake()
     {
+        if (Instancia == null)
+        {
+            Instancia = this;
+            // DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         camera_player = GameObject.Find("Camera Player");
         areaFoto = GameObject.Find("AreaFoto");
         camera__ = GameObject.Find("Camera");
