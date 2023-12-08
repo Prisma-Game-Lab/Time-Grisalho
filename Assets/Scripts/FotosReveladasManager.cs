@@ -22,5 +22,7 @@ public class FotosReveladasManager : MonoBehaviour
     {
         Debug.Log(fotoInd.ToString());  
         lFotosRev[fotoInd].SetActive(true);
+        Debug.Log(lFotosRev[fotoInd].GetComponent<RawImage>().ToString());
+        GameObject.Find("Camera Reveladora").GetComponent<SaveCameraFoto>().ShowsTakenPicture(GameObject.Find("Camera Reveladora").GetComponent<SaveCameraFoto>().CaptureScreen(), lFotosRev[fotoInd].GetComponent<RawImage>());
     }
 }

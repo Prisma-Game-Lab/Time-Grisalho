@@ -40,7 +40,7 @@ public class SaveCameraFoto : MonoBehaviour
     //method to render from camera
     public Sprite CaptureScreen()
     {
-        Texture2D texture = new Texture2D(secondCameraRenderTexture.width, secondCameraRenderTexture.height, TextureFormat.RGBA32, false);
+        Texture2D texture = new Texture2D(secondCameraRenderTexture.width, secondCameraRenderTexture.height, TextureFormat.RGBA32, false, true);
         RenderTexture.active = secondCameraRenderTexture;
         texture.ReadPixels(new Rect(0, 0, secondCameraRenderTexture.width, secondCameraRenderTexture.height), 0, 0);
         texture.Apply();

@@ -99,7 +99,7 @@ public class InputCamera : MonoBehaviour
                 {
                     Debug.Log("tirou foto certo!");
                     lfotosTiradas[alvoAtual] = GameObject.Find("Camera Reveladora").GetComponent<SaveCameraFoto>().CaptureScreen();
-                    GameObject.Find("Camera Reveladora").GetComponent<SaveCameraFoto>().ShowsTakenPicture(GameObject.Find("Camera Reveladora").GetComponent<SaveCameraFoto>().CaptureScreen(), GameObject.Find("Camera Reveladora").GetComponent<SaveCameraFoto>().rawImage);
+                    GameObject.Find("Camera Reveladora").GetComponent<SaveCameraFoto>().ShowsTakenPicture( GameObject.Find("Camera Reveladora").GetComponent<SaveCameraFoto>().CaptureScreen() , GameObject.Find("Camera Reveladora").GetComponent<SaveCameraFoto>().rawImage );
                     Desativa_Ativa_CertoErrado.Instancia.Ativa_Certo_Errado(1);
                     GameObject.Find("Canvas").GetComponent<FotosReveladasManager>().RevelaFoto(alvoAtual);
                     StartCoroutine(waiter_certo());
