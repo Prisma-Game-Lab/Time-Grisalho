@@ -15,7 +15,7 @@ public class Background : MonoBehaviour
         cam = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         float dist = cam.transform.position.x * efeitoParallax;
 
