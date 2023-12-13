@@ -146,6 +146,7 @@ public class InputCamera : MonoBehaviour
         float posMousex = Camera.main.ScreenToWorldPoint(posMouse).x;
         float dx = posMousex - transform.position.x;
         tamanho = background.sprite.bounds.size.x / 2 - 8.9f;
+        Debug.Log(tamanho);
 
         if (dx > limite || dx < -limite)
         {
