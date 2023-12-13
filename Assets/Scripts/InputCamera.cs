@@ -25,7 +25,7 @@ public class InputCamera : MonoBehaviour
     [SerializeField] private List<bool> ljaTirouFotos = new List<bool>(); // para cada alvo na lista lAlvos indica se a foto ja foi tirada ou nao
     private List<GameObject> lAlvos = new List<GameObject>(); // lista de alvos
     [SerializeField] private List<Sprite> lfotosTiradas = new List<Sprite>(); //lista de sprites
-    
+
 
 
     private void cameraSegueMouse()
@@ -62,6 +62,12 @@ public class InputCamera : MonoBehaviour
 
     }
 
+    private bool estaTapado()
+    {
+        if (Physics2D.OverlapArea(topLeft, bottomRight, LayerMask.GetMask("TapaFoto"))) { return true; }
+        return false;
+    }
+
     private int qualEstaOverlapping()
     {
         for (int i = 0; i < quantidadeDeFotos; i++)
@@ -91,7 +97,7 @@ public class InputCamera : MonoBehaviour
         {
             topLeft = areaFoto.GetComponent<BoxCollider2D>().bounds.min;
             bottomRight = areaFoto.GetComponent<BoxCollider2D>().bounds.max;
-            if (estaOverlapping())
+            if (estaOverlapping() && !estaTapado())
             {
                 // Debug.Log("tirou foto certo!");
                 int alvoAtual = qualEstaOverlapping();
