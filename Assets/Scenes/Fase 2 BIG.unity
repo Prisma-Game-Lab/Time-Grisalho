@@ -4957,6 +4957,14 @@ PrefabInstance:
       propertyPath: camera_player
       value: 
       objectReference: {fileID: 315266474}
+    - target: {fileID: 3309866704138621300, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 696455673400204314}
+    - target: {fileID: 3309866704138621300, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Clique
+      objectReference: {fileID: 0}
     - target: {fileID: 3486931244866465983, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5075,10 +5083,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 768783322338167067, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6673823561513424432, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
+    - {fileID: 354127952326977735, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
+    - {fileID: 632317535290841347, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
+    - {fileID: 1025131036968023875, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
+--- !u!114 &696455673400204314 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2061183422268741109, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
+  m_PrefabInstance: {fileID: 696455673400204313}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0522535528b76764e9ba046fd240fb70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
