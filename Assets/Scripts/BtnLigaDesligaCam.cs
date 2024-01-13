@@ -17,11 +17,13 @@ public class LigaDesligaCam : MonoBehaviour
         {
             camera_player.SetActive(true);
             camera__.SetActive(true);
+            GameObject.Find("Main Camera").GetComponent<BotoesUI_Gerenciador>().DesativaBotoes();
         }
         else
         {
             camera_player.SetActive(false);
             camera__.SetActive(false);
+            GameObject.Find("Main Camera").GetComponent<BotoesUI_Gerenciador>().AtivaBotoes();
         }
     }
 

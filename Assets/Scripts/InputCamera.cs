@@ -27,7 +27,6 @@ public class InputCamera : MonoBehaviour
     [SerializeField] private List<Sprite> lfotosTiradas = new List<Sprite>(); //lista de sprites
 
 
-
     private void cameraSegueMouse()
     {
         posMouse.z = Camera.main.nearClipPlane;
@@ -93,8 +92,9 @@ public class InputCamera : MonoBehaviour
 
     private void tiraFoto()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
+            this.GetComponent<BotoesUI_Gerenciador>().AtivaBotoes();
             topLeft = areaFoto.GetComponent<BoxCollider2D>().bounds.min;
             bottomRight = areaFoto.GetComponent<BoxCollider2D>().bounds.max;
             if (estaOverlapping() && !estaTapado())
@@ -208,6 +208,7 @@ public class InputCamera : MonoBehaviour
             {
                 camera_player.SetActive(true);
                 camera__.SetActive(true);
+                this.GetComponent<BotoesUI_Gerenciador>().DesativaBotoes();
             }
         }
         else
@@ -216,6 +217,7 @@ public class InputCamera : MonoBehaviour
             {
                 camera_player.SetActive(false);
                 camera__.SetActive(false);
+                this.GetComponent<BotoesUI_Gerenciador>().AtivaBotoes();
             }
             cameraSegueMouse();
             tiraFoto();
