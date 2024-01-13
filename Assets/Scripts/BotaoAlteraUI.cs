@@ -30,4 +30,26 @@ public class BotaoAlteraUI : MonoBehaviour
         }
         fonte.Play();
     }
+
+    private void alternaUIesc()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(gameUI.activeSelf) 
+            {
+                albumUI.SetActive(true);
+                gameUI.SetActive(false);
+            }
+            else if (albumUI.activeSelf)
+            {
+                albumUI.SetActive(false);
+                gameUI.SetActive(true);
+            }
+        }
+    }
+
+    private void Update()
+    {
+        alternaUIesc();
+    }
 }
