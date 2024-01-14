@@ -1,0 +1,34 @@
+{
+    "name": "InputTeclado",
+    "maps": [
+        {
+            "name": "Teclado",
+            "id": "35aea8f3-5153-4207-a378-d368d4f41030",
+            "actions": [
+                {
+                    "name": "Album",
+                    "type": "Button",
+                    "id": "eb620c16-f19b-48ae-bb19-77f88d55cf52",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a1e89742-aebe-4b21-98bb-8c97537e38b2",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Album",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
