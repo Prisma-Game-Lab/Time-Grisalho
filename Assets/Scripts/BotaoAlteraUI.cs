@@ -14,7 +14,6 @@ public class BotaoAlteraUI : MonoBehaviour
         albumUI = GameObject.Find("Canvas").transform.Find("AlbumUI").gameObject;
         gameUI = GameObject.Find("Canvas").transform.Find("GameUI").gameObject;
         fonte = FindObjectOfType<AudioSource>();
-        fonte.clip = som;
     }
 
     public void Clique()
@@ -29,6 +28,7 @@ public class BotaoAlteraUI : MonoBehaviour
             albumUI.SetActive(false);
             gameUI.SetActive(true);
         }
+        fonte.clip = som;
         fonte.Play();
     }
 }

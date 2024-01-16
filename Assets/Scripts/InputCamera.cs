@@ -14,7 +14,8 @@ public class InputCamera : MonoBehaviour
     public TextMeshProUGUI txtBtn_LigaDeslCam;
     private ConcluiFase concluiFase;
     private SpriteRenderer background;
-
+    [SerializeField]
+    private SpriteRenderer quadrado_preto;
     [SerializeField]
     private float limite, speed;
     private float tamanho;
@@ -25,6 +26,11 @@ public class InputCamera : MonoBehaviour
     [SerializeField] private List<bool> ljaTirouFotos = new List<bool>(); // para cada alvo na lista lAlvos indica se a foto ja foi tirada ou nao
     private List<GameObject> lAlvos = new List<GameObject>(); // lista de alvos
     [SerializeField] private List<Sprite> lfotosTiradas = new List<Sprite>(); //lista de sprites
+    [SerializeField]
+    private AudioClip feedback_positivo;
+    [SerializeField]
+    private AudioClip feedback_negativo;
+    private AudioSource fonte;
 
 
     private void cameraSegueMouse()
@@ -71,7 +77,8 @@ public class InputCamera : MonoBehaviour
     {
         for (int i = 0; i < quantidadeDeFotos; i++)
         {
-            if (Physics2D.OverlapCircle(lAlvos[i].GetComponent<CircleCollider2D>().bounds.center, lAlvos[i].GetComponent<CircleCollider2D>().radius, LayerMask.GetMask("AreaFoto"))) {
+            if (Physics2D.OverlapCircle(lAlvos[i].GetComponent<CircleCollider2D>().bounds.center, lAlvos[i].GetComponent<CircleCollider2D>().radius, LayerMask.GetMask("AreaFoto")))
+            {
                 return i;
             }
         }
@@ -80,7 +87,7 @@ public class InputCamera : MonoBehaviour
 
     private bool jaTirouTdsFotos()
     {
-        for(int i = 0; i < quantidadeDeFotos; i++)
+        for (int i = 0; i < quantidadeDeFotos; i++)
         {
             if (!ljaTirouFotos[i])
             {
@@ -97,6 +104,7 @@ public class InputCamera : MonoBehaviour
             this.GetComponent<BotoesUI_Gerenciador>().AtivaBotoes();
             topLeft = areaFoto.GetComponent<BoxCollider2D>().bounds.min;
             bottomRight = areaFoto.GetComponent<BoxCollider2D>().bounds.max;
+            // quadrado_preto.gameObject.SetActive(true);
             if (estaOverlapping() && !estaTapado())
             {
                 // Debug.Log("tirou foto certo!");
@@ -105,11 +113,13 @@ public class InputCamera : MonoBehaviour
                 {
                     Debug.Log("tirou foto certo!");
                     lfotosTiradas[alvoAtual] = GameObject.Find("Camera Reveladora").GetComponent<SaveCameraFoto>().CaptureScreen();
-                    GameObject.Find("Camera Reveladora").GetComponent<SaveCameraFoto>().ShowsTakenPicture( GameObject.Find("Camera Reveladora").GetComponent<SaveCameraFoto>().CaptureScreen() , GameObject.Find("Camera Reveladora").GetComponent<SaveCameraFoto>().rawImage );
+                    GameObject.Find("Camera Reveladora").GetComponent<SaveCameraFoto>().ShowsTakenPicture(GameObject.Find("Camera Reveladora").GetComponent<SaveCameraFoto>().CaptureScreen(), GameObject.Find("Camera Reveladora").GetComponent<SaveCameraFoto>().rawImage);
                     Desativa_Ativa_CertoErrado.Instancia.Ativa_Certo_Errado(1);
                     GameObject.Find("Canvas").GetComponent<FotosReveladasManager>().RevelaFoto(alvoAtual);
                     StartCoroutine(waiter_certo());
                     ljaTirouFotos[alvoAtual] = true;
+                    fonte.clip = feedback_positivo;
+                    fonte.Play();
                 }
                 //for (int i = 0; i < quantidadeDeFotos; i++)
                 //{
@@ -139,6 +149,8 @@ public class InputCamera : MonoBehaviour
                 SaveCameraFoto.Instancia.ShowsTakenPicture(SaveCameraFoto.Instancia.CaptureScreen(), SaveCameraFoto.Instancia.rawImage);
                 Desativa_Ativa_CertoErrado.Instancia.Ativa_Certo_Errado(2);
                 StartCoroutine(waiter_errado());
+                fonte.clip = feedback_negativo;
+                fonte.Play();
             }
             //txtBtn_LigaDeslCam.text = "Abrir\nC�mera";
             camera_player.SetActive(false);
@@ -170,9 +182,10 @@ public class InputCamera : MonoBehaviour
 
     private void InicializaJaTirouFotosAlvos()
     {
-        for(int i = 0; i < quantidadeDeFotos; i++) {
+        for (int i = 0; i < quantidadeDeFotos; i++)
+        {
             ljaTirouFotos.Add(false);
-            lAlvos.Add(GameObject.Find("Alvo " +  (i + 1).ToString() ));
+            lAlvos.Add(GameObject.Find("Alvo " + (i + 1).ToString()));
             lfotosTiradas.Add(null);
         }
     }
@@ -195,6 +208,7 @@ public class InputCamera : MonoBehaviour
         concluiFase = FindAnyObjectByType<ConcluiFase>();
         camera_player.SetActive(false);
         camera__.SetActive(false);
+        fonte = FindObjectOfType<AudioSource>();
         InicializaJaTirouFotosAlvos();
 
         background = GameObject.FindGameObjectWithTag("Background").GetComponent<SpriteRenderer>();
