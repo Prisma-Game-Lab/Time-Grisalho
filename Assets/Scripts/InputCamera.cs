@@ -13,9 +13,8 @@ public class InputCamera : MonoBehaviour
     private Vector2 topLeft, bottomRight;
     public TextMeshProUGUI txtBtn_LigaDeslCam;
     private ConcluiFase concluiFase;
-    private SpriteRenderer background;
     [SerializeField]
-    private SpriteRenderer quadrado_preto;
+    private SpriteRenderer background, quadrado_preto;
     [SerializeField]
     private float limite, speed;
     private float tamanho;

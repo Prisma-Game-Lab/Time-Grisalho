@@ -2,13 +2,21 @@ using UnityEngine;
 
 public class RenderCameraEffects : MonoBehaviour
 {
-    public Camera renderCamera;
-    public Camera revealCamera;
+    [SerializeField]
+    private Camera renderCamera;
+    [SerializeField]
+    private Camera revealCamera;
     public float zoomSpeed = 1.0f;
     public float minSize = 0.7f; // Minimum orthographic size
     public float maxSize = 4.5f; // Maximum orthographic size
     private float scrollInput;
 
+    private void Start()
+    {
+        renderCamera = GetComponent<Camera>();
+        revealCamera = gameObject.transform.GetChild(0).GetComponent<Camera>();
+
+    }
     void Update()
     {
         // Get the scroll wheel input
