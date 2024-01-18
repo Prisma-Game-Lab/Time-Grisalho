@@ -151,7 +151,7 @@ public class InputCamera : MonoBehaviour
                 fonte.clip = feedback_negativo;
                 fonte.Play();
             }
-            //txtBtn_LigaDeslCam.text = "Abrir\nC�mera";
+
             camera_player.SetActive(false);
             camera__.SetActive(false);
         }

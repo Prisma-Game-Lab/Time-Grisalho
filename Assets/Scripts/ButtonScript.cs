@@ -24,10 +24,12 @@ public class ButtonScript : MonoBehaviour
         {
             if(proximaCena == "Controles")
             {
+                GameObject.Find("Troca de Cena Options Manager").GetComponent<optionsAtivaDesativaAudioEvent>().ativaDesativa("desativa");
                 SceneManager.LoadScene(proximaCena, LoadSceneMode.Additive);
                 fonte.Play();
             } else if (proximaCena == "Options do Controle")
             {
+                GameObject.Find("Troca de Cena Options Manager").GetComponent<optionsAtivaDesativaAudioEvent>().ativaDesativa("ativa");
                 SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(2));
             }
             else
@@ -54,7 +56,7 @@ public class ButtonScript : MonoBehaviour
             OptionsButton.cenaAnteriorOptions = SceneManager.GetActiveScene().name;
         }
 
-        GameObject.Find("Troca de Cena Options Manager").GetComponent<FaseEOptionsLoadingManager>().estaNaFase = false;
+        GameObject.Find("Troca de Cena Fase Manager").GetComponent<FaseEOptionsLoadingManager>().estaNaFase = false;
         GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = false;
         GameObject.Find("EventSystem").GetComponent<EventSystem>().enabled = false;
         SceneManager.LoadScene(proximaCena, LoadSceneMode.Additive);
@@ -63,7 +65,7 @@ public class ButtonScript : MonoBehaviour
 
     public void CliqueOptionsParaFase()
     {
-        GameObject.Find("Troca de Cena Options Manager").GetComponent<FaseEOptionsLoadingManager>().estaNaFase = true;
+        GameObject.Find("Troca de Cena Fase Manager").GetComponent<FaseEOptionsLoadingManager>().estaNaFase = true;
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(1));
         fonte.Play();
     }
