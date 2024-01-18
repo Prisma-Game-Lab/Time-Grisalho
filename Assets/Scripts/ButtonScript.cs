@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -22,6 +24,11 @@ public class ButtonScript : MonoBehaviour
     {
         if (SceneManager.loadedSceneCount != 1)
         {
+            if (proximaCena == "MainMenu")
+            {
+                scenesManager.GoToScene(proximaCena);
+                fonte.Play();
+            }
             cliqueOptionsInGame();
         }
         else

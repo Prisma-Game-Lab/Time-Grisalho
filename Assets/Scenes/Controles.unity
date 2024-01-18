@@ -369,6 +369,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 333887198}
     m_Modifications:
+    - target: {fileID: 468928042127726978, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
+      propertyPath: som
+      value: 
+      objectReference: {fileID: 8300000, guid: 3e85b6cdfcbacb9479c186284770e5dc, type: 3}
+    - target: {fileID: 468928042127726978, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
+      propertyPath: proximaCena
+      value: MainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 5125372969114462890, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
       propertyPath: m_text
       value: 
@@ -392,6 +400,18 @@ PrefabInstance:
     - target: {fileID: 6364596569179810556, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
       propertyPath: m_Colors.m_NormalColor.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6364596569179810556, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 970033267}
+    - target: {fileID: 6364596569179810556, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Clique
+      objectReference: {fileID: 0}
+    - target: {fileID: 6364596569179810556, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ButtonScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7576848452428115581, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
       propertyPath: proximaCena
@@ -499,6 +519,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7920225144100987373, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
   m_PrefabInstance: {fileID: 970033265}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &970033267 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 468928042127726978, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
+  m_PrefabInstance: {fileID: 970033265}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0522535528b76764e9ba046fd240fb70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1210010252
 GameObject:
   m_ObjectHideFlags: 0

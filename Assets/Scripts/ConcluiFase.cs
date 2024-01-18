@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class ConcluiFase : MonoBehaviour
 {
     [SerializeField]
-    private NumDeFases numDeFases;
-    [SerializeField]
     private ScenesManager gerenciadorDeCena;
     [SerializeField]
     private float timer;
@@ -25,12 +23,7 @@ public class ConcluiFase : MonoBehaviour
 
     private IEnumerator Espera()
     {
-        string nomeFase = SceneManager.GetActiveScene().name;
-        if (numDeFases.numeroDeFases <= (nomeFase[nomeFase.Length - 1] - '0'))
-        {
-            numDeFases.numeroDeFases++;
-        }
         yield return new WaitForSeconds(timer);
-        gerenciadorDeCena.GoToScene("Album");
+        gerenciadorDeCena.GoToScene("Fim");
     }
 }
