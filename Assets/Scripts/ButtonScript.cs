@@ -22,32 +22,44 @@ public class ButtonScript : MonoBehaviour
     {
         if (SceneManager.loadedSceneCount != 1)
         {
-            if(proximaCena == "Controles")
-            {
-                GameObject.Find("Troca de Cena Options Manager").GetComponent<optionsAtivaDesativaAudioEvent>().ativaDesativa("desativa");
-                SceneManager.LoadScene(proximaCena, LoadSceneMode.Additive);
-                fonte.Play();
-            } else if (proximaCena == "Options do Controle")
-            {
-                GameObject.Find("Troca de Cena Options Manager").GetComponent<optionsAtivaDesativaAudioEvent>().ativaDesativa("ativa");
-                SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(2));
-            }
-            else
-            {
-                CliqueOptionsParaFase();
-            }
+            cliqueOptionsInGame();
         }
         else
         {
             if (proximaCena == "Options" && SceneManager.GetActiveScene().name != "Controles")
             {
                 OptionsButton.cenaAnteriorOptions = SceneManager.GetActiveScene().name;
+            } if (proximaCena == "Options do Controle")
+            {
+                scenesManager.GoToScene("Options");
+                fonte.Play();
+                return;
             }
+            print(proximaCena);
             scenesManager.GoToScene(proximaCena);
             fonte.Play();
         }
     }
     
+    private void cliqueOptionsInGame()
+    {
+        if (proximaCena == "Controles")
+        {
+            GameObject.Find("Troca de Cena Options Manager").GetComponent<optionsAtivaDesativaAudioEvent>().ativaDesativa("desativa");
+            SceneManager.LoadScene(proximaCena, LoadSceneMode.Additive);
+            fonte.Play();
+        }
+        else if (proximaCena == "Options do Controle")
+        {
+            GameObject.Find("Troca de Cena Options Manager").GetComponent<optionsAtivaDesativaAudioEvent>().ativaDesativa("ativa");
+            SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(2));
+        }
+        else
+        {
+            CliqueOptionsParaFase();
+        }
+    }
+
     //vai pra options da fase principal sem dar unload na fase (pra manter a cena funcionando)
     public void CliqueFaseParaOptions()
     {

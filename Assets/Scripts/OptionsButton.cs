@@ -20,7 +20,18 @@ public class OptionsButton : MonoBehaviour
 
     public void Clique()
     {
+        if (SceneManager.loadedSceneCount != 1)
+        {
+            CliqueOptionsParaFase();
+        }
         scenesManager.GoToScene(cenaAnteriorOptions);
+        fonte.Play();
+    }
+
+    public void CliqueOptionsParaFase()
+    {
+        GameObject.Find("Troca de Cena Fase Manager").GetComponent<FaseEOptionsLoadingManager>().estaNaFase = true;
+        SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(1));
         fonte.Play();
     }
 }
