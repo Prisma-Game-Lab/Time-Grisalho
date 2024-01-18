@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7181458572984709436}
   - component: {fileID: 6083354526419580700}
   - component: {fileID: 6364596569179810556}
-  - component: {fileID: 2369595898154089506}
+  - component: {fileID: 468928042127726978}
   - component: {fileID: 5058176079713685809}
   m_Layer: 5
   m_Name: Button
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2369595898154089506}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: OptionsButton, Assembly-CSharp
         m_MethodName: Clique
         m_Mode: 1
@@ -135,7 +135,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2369595898154089506
+--- !u!114 &468928042127726978
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,10 +144,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5184059516798378437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 033c00fd2ff114b4482bc06a8a71d47e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0522535528b76764e9ba046fd240fb70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  som: {fileID: 8300000, guid: 3e85b6cdfcbacb9479c186284770e5dc, type: 3}
+  som: {fileID: 0}
+  proximaCena: Options
 --- !u!95 &5058176079713685809
 Animator:
   serializedVersion: 5

@@ -210,6 +210,7 @@ public class InputCamera : MonoBehaviour
         fonte = FindObjectOfType<AudioSource>();
         InicializaJaTirouFotosAlvos();
 
+
         background = GameObject.FindGameObjectWithTag("Background").GetComponent<SpriteRenderer>();
     }
 
