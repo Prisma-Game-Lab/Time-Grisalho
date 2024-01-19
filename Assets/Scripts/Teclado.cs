@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Composites;
 public class Teclado : MonoBehaviour
 {
     [SerializeField]
@@ -45,20 +46,11 @@ public class Teclado : MonoBehaviour
     {
         float posMousex = Camera.main.ScreenToWorldPoint(script_camera.posMouse).x;
         float dx = posMousex - main_camera.transform.position.x;
-        var tamanho = background.sprite.bounds.size.x / 2 - 8.9f;
 
         if (dx < script_camera.limite && dx > -script_camera.limite)
         {
-            if (main_camera.transform.position.x < tamanho && main_camera.transform.position.x > -tamanho)
-            {
-                sentido = movimento;
-            }
-            else
-            {
-                sentido = Vector2.zero;
-            }
-
-            main_camera.transform.Translate(Time.deltaTime * script_camera.speed * sentido);
+            main_camera.transform.Translate(Time.deltaTime * script_camera.speed * movimento);
+            main_camera.transform.position = new Vector3(Mathf.Clamp(main_camera.transform.position.x, -script_camera.tamanho, script_camera.tamanho), 0, -10);
         }
     }
 }
