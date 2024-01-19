@@ -16,7 +16,7 @@ public class InputCamera : MonoBehaviour
     [SerializeField]
     private SpriteRenderer background, quadrado_preto;
     [SerializeField]
-    private float limite, speed;
+    public float limite, speed;
     private float tamanho;
 
     public float tempoDeEsperaFeedbackPositivo = 5.0f, tempoDeEsperaFeedbackNegativo = 5.0f;
@@ -157,7 +157,7 @@ public class InputCamera : MonoBehaviour
         }
     }
 
-    private void MexeCamera()
+    public void MexeCamera()
     {
         Vector3 delta = Vector3.zero;
         float posMousex = Camera.main.ScreenToWorldPoint(posMouse).x;
