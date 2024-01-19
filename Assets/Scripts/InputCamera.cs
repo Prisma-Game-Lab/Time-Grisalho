@@ -17,7 +17,7 @@ public class InputCamera : MonoBehaviour
     private SpriteRenderer background, quadrado_preto;
     [SerializeField]
     public float limite, speed;
-    private float tamanho;
+    public float tamanho;
 
     public float tempoDeEsperaFeedbackPositivo = 5.0f, tempoDeEsperaFeedbackNegativo = 5.0f;
 
