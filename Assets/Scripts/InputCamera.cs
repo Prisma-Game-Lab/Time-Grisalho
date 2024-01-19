@@ -162,7 +162,6 @@ public class InputCamera : MonoBehaviour
         Vector3 delta = Vector3.zero;
         float posMousex = Camera.main.ScreenToWorldPoint(posMouse).x;
         float dx = posMousex - transform.position.x;
-        tamanho = background.sprite.bounds.size.x / 2 - 8.9f;
 
         if (dx > limite || dx < -limite)
         {

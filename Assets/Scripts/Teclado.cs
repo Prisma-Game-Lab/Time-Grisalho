@@ -8,13 +8,16 @@ public class Teclado : MonoBehaviour
     [SerializeField]
     private GameObject albumUI, gameUI, voltar, main_camera;
     private InputCamera script_camera;
-    private Vector2 movimento;
+    private Vector2 movimento, sentido;
+    [SerializeField]
+    private SpriteRenderer background;
     private void Start()
     {
         albumUI = GameObject.Find("Canvas").transform.Find("AlbumUI").gameObject;
         gameUI = GameObject.Find("Canvas").transform.Find("GameUI").gameObject;
         main_camera = GameObject.Find("Main Camera");
         script_camera = main_camera.GetComponent<InputCamera>();
+        background = GameObject.FindGameObjectWithTag("Background").GetComponent<SpriteRenderer>();
     }
     private void Update()
     {
@@ -42,10 +45,20 @@ public class Teclado : MonoBehaviour
     {
         float posMousex = Camera.main.ScreenToWorldPoint(script_camera.posMouse).x;
         float dx = posMousex - main_camera.transform.position.x;
+        var tamanho = background.sprite.bounds.size.x / 2 - 8.9f;
 
         if (dx < script_camera.limite && dx > -script_camera.limite)
         {
-            main_camera.transform.Translate(Time.deltaTime * script_camera.speed * movimento);
+            if (main_camera.transform.position.x < tamanho && main_camera.transform.position.x > -tamanho)
+            {
+                sentido = movimento;
+            }
+            else
+            {
+                sentido = Vector2.zero;
+            }
+
+            main_camera.transform.Translate(Time.deltaTime * script_camera.speed * sentido);
         }
     }
 }
