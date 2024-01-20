@@ -4038,7 +4038,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posMouse: {x: 0, y: 0, z: 0}
   txtBtn_LigaDeslCam: {fileID: 0}
-  background: {fileID: 0}
   quadrado_preto: {fileID: 464666709}
   limite: 7
   speed: 6
@@ -4544,6 +4543,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c2d7e6dd-3166-4b0d-8899-fb3962f312a4
     m_ActionName: Teclado/Movimento[/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1214329548}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: CliqueFaseParaOptions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9e4e8882-7f2f-4234-a5dc-e266fe967278
+    m_ActionName: Teclado/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Teclado
@@ -4580,7 +4595,6 @@ MonoBehaviour:
   gameUI: {fileID: 0}
   voltar: {fileID: 0}
   main_camera: {fileID: 0}
-  background: {fileID: 0}
 --- !u!1 &1837419028
 GameObject:
   m_ObjectHideFlags: 0
@@ -5465,6 +5479,10 @@ PrefabInstance:
       propertyPath: m_Texture
       value: 
       objectReference: {fileID: 2800000, guid: 62100a83c3fe43549a643259200f45bd, type: 3}
+    - target: {fileID: 1285025230376226229, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1722105525978998039, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
       propertyPath: m_SizeDelta.x
       value: 171.9236
