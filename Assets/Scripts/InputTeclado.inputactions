@@ -6,6 +6,15 @@
             "id": "35aea8f3-5153-4207-a378-d368d4f41030",
             "actions": [
                 {
+                    "name": "Movimento",
+                    "type": "Value",
+                    "id": "c2d7e6dd-3166-4b0d-8899-fb3962f312a4",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Album",
                     "type": "Button",
                     "id": "eb620c16-f19b-48ae-bb19-77f88d55cf52",
@@ -15,24 +24,35 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Movimento",
-                    "type": "Value",
-                    "id": "c2d7e6dd-3166-4b0d-8899-fb3962f312a4",
-                    "expectedControlType": "Vector2",
+                    "name": "Options",
+                    "type": "Button",
+                    "id": "9e4e8882-7f2f-4234-a5dc-e266fe967278",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "a1e89742-aebe-4b21-98bb-8c97537e38b2",
-                    "path": "<Keyboard>/escape",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Album",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c12f9e2f-77fe-4ad5-b31c-d4f663598c88",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Options",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

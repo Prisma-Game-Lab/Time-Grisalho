@@ -14,7 +14,7 @@ public class InputCamera : MonoBehaviour
     public TextMeshProUGUI txtBtn_LigaDeslCam;
     private ConcluiFase concluiFase;
     [SerializeField]
-    private SpriteRenderer background, quadrado_preto;
+    private SpriteRenderer quadrado_preto;
     [SerializeField]
     public float limite, speed;
     public float tamanho;
@@ -208,9 +208,6 @@ public class InputCamera : MonoBehaviour
         camera__.SetActive(false);
         fonte = FindObjectOfType<AudioSource>();
         InicializaJaTirouFotosAlvos();
-
-
-        background = GameObject.FindGameObjectWithTag("Background").GetComponent<SpriteRenderer>();
     }
 
     void Update()
