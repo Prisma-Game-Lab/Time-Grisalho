@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   som: {fileID: 8300000, guid: 3e85b6cdfcbacb9479c186284770e5dc, type: 3}
-  proximaCena: Fase 2 BIG
+  proximaCena: Controles
 --- !u!95 &113271055
 Animator:
   serializedVersion: 5
