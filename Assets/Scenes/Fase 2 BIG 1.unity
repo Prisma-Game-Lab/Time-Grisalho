@@ -592,7 +592,7 @@ GameObject:
   - component: {fileID: 315266475}
   m_Layer: 0
   m_Name: Camera Player
-  m_TagString: Untagged
+  m_TagString: Camera Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4605,6 +4605,7 @@ MonoBehaviour:
   gameUI: {fileID: 0}
   voltar: {fileID: 0}
   main_camera: {fileID: 0}
+  camera_player: {fileID: 0}
 --- !u!1 &1837419028
 GameObject:
   m_ObjectHideFlags: 0

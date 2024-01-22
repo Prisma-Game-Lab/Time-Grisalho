@@ -7,9 +7,10 @@ using UnityEngine.InputSystem.Composites;
 public class Teclado : MonoBehaviour
 {
     [SerializeField]
-    private GameObject albumUI, gameUI, voltar, main_camera;
+    private GameObject albumUI, gameUI, voltar, main_camera, buttonOptions, camera_player;
     private InputCamera script_camera;
     private Vector2 movimento;
+
     private void Start()
     {
         albumUI = GameObject.Find("Canvas").transform.Find("AlbumUI").gameObject;
@@ -31,7 +32,18 @@ public class Teclado : MonoBehaviour
 
     public void Troca()
     {
-        voltar.GetComponent<BotaoAlteraUI>().Clique();
+        if (!camera_player.activeSelf)
+        {
+            voltar.GetComponent<BotaoAlteraUI>().Clique();
+        }
+    }
+
+    public void Options()
+    {
+        if (!camera_player.activeSelf)
+        {
+            buttonOptions.GetComponent<ButtonScript>().CliqueFaseParaOptions();
+        }
     }
 
     public void Movimento(InputAction.CallbackContext context)
