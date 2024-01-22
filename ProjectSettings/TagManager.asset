@@ -7,7 +7,6 @@ TagManager:
   - Alvo
   - Background
   - AreaFoto
-  - Camera Player
   layers:
   - Default
   - TransparentFX

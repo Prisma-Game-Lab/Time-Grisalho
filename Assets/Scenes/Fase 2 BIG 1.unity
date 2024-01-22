@@ -592,7 +592,7 @@ GameObject:
   - component: {fileID: 315266475}
   m_Layer: 0
   m_Name: Camera Player
-  m_TagString: Camera Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4539,9 +4539,9 @@ MonoBehaviour:
     m_ActionName: Teclado/Movimento[/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1214329548}
-        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
-        m_MethodName: CliqueFaseParaOptions
+      - m_Target: {fileID: 1813604991}
+        m_TargetAssemblyTypeName: Teclado, Assembly-CSharp
+        m_MethodName: Options
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4605,7 +4605,8 @@ MonoBehaviour:
   gameUI: {fileID: 0}
   voltar: {fileID: 0}
   main_camera: {fileID: 0}
-  camera_player: {fileID: 0}
+  buttonOptions: {fileID: 1214329545}
+  camera_player: {fileID: 315266474}
 --- !u!1 &1837419028
 GameObject:
   m_ObjectHideFlags: 0
@@ -5670,6 +5671,10 @@ PrefabInstance:
       propertyPath: som
       value: 
       objectReference: {fileID: 8300000, guid: 3e85b6cdfcbacb9479c186284770e5dc, type: 3}
+    - target: {fileID: 8303902625167614474, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
+      propertyPath: camera_player
+      value: 
+      objectReference: {fileID: 315266474}
     - target: {fileID: 8558624775877890130, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
       propertyPath: m_Enabled
       value: 0
