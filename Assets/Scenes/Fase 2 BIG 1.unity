@@ -1845,6 +1845,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4196524954246121575, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
   m_PrefabInstance: {fileID: 696455673400204313}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &738231030 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3306223569916766887, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
+  m_PrefabInstance: {fileID: 696455673400204313}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &743261026
 GameObject:
   m_ObjectHideFlags: 0
@@ -4075,9 +4080,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lBotoesUI:
   - {fileID: 1214329545}
-  - {fileID: 1775082830}
-  - {fileID: 1804231705}
   - {fileID: 709077688}
+  - {fileID: 738231030}
 --- !u!1 &1690388272
 GameObject:
   m_ObjectHideFlags: 0
@@ -4359,16 +4363,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1775082830 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1285025230376226229, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
-  m_PrefabInstance: {fileID: 696455673400204313}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1804231705 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3085924983144783544, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
-  m_PrefabInstance: {fileID: 696455673400204313}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1807837196
 GameObject:
   m_ObjectHideFlags: 0
@@ -4559,6 +4553,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 9e4e8882-7f2f-4234-a5dc-e266fe967278
     m_ActionName: Teclado/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1675381614}
+        m_TargetAssemblyTypeName: InputCamera, Assembly-CSharp
+        m_MethodName: AtivaCamera
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: dc956c68-2298-4b01-97ec-24ce9d7080aa
+    m_ActionName: "Teclado/C\xE2mera[/Keyboard/e]"
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Teclado
@@ -5527,6 +5537,10 @@ PrefabInstance:
       propertyPath: camera_player
       value: 
       objectReference: {fileID: 315266474}
+    - target: {fileID: 3306223569916766887, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3309866704138621300, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5647,6 +5661,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 17c9e68c92568de4b98ed74f75b58bd5, type: 3}
+    - target: {fileID: 7950732047349991944, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8303902625167614474, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
       propertyPath: som
       value: 
