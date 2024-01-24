@@ -3445,8 +3445,8 @@ MonoBehaviour:
   gameUI: {fileID: 0}
   voltar: {fileID: 0}
   main_camera: {fileID: 0}
-  buttonOptions: {fileID: 0}
-  camera_player: {fileID: 0}
+  buttonOptions: {fileID: 2004748603}
+  camera_player: {fileID: 387356530}
 --- !u!114 &832578542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3505,9 +3505,37 @@ MonoBehaviour:
     m_ActionId: c2d7e6dd-3166-4b0d-8899-fb3962f312a4
     m_ActionName: Teclado/Movimento[/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 832578541}
+        m_TargetAssemblyTypeName: Teclado, Assembly-CSharp
+        m_MethodName: Options
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 9e4e8882-7f2f-4234-a5dc-e266fe967278
     m_ActionName: Teclado/Options[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 832578540}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: dc956c68-2298-4b01-97ec-24ce9d7080aa
+    m_ActionName: "Teclado/C\xE2mera[/Keyboard/e]"
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Teclado
