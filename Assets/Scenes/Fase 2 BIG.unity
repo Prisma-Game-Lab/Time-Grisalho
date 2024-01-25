@@ -1464,7 +1464,7 @@ GameObject:
   - component: {fileID: 372190125}
   - component: {fileID: 372190124}
   m_Layer: 6
-  m_Name: Alvo 3
+  m_Name: Alvo 4
   m_TagString: Alvo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1762,7 +1762,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1926503631
   m_SortingLayer: -1
-  m_SortingOrder: 5
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 113a3534c5d12944db1d03608f6eda41, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -3498,7 +3498,7 @@ MonoBehaviour:
   tamanho: 25.5
   tempoDeEsperaFeedbackPositivo: 1.34
   tempoDeEsperaFeedbackNegativo: 5
-  quantidadeDeFotos: 4
+  quantidadeDeFotos: 8
   ljaTirouFotos: 
   lfotosTiradas: []
   feedback_positivo: {fileID: 8300000, guid: a491f9cb23a38a0438b07a5b3dc7dfc9, type: 3}
@@ -4480,7 +4480,7 @@ GameObject:
   - component: {fileID: 925957952}
   - component: {fileID: 925957951}
   m_Layer: 6
-  m_Name: Alvo 1 (2)
+  m_Name: Alvo 7
   m_TagString: Alvo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7281,11 +7281,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 768783322338167067, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
     - {fileID: 6151611472993634218, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
-    m_RemovedGameObjects:
-    - {fileID: 6673823561513424432, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
-    - {fileID: 354127952326977735, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
-    - {fileID: 632317535290841347, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
-    - {fileID: 1025131036968023875, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
@@ -8495,7 +8491,7 @@ GameObject:
   - component: {fileID: 1635706839}
   - component: {fileID: 1635706838}
   m_Layer: 6
-  m_Name: Alvo 2
+  m_Name: Alvo 3
   m_TagString: Alvo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8692,7 +8688,7 @@ GameObject:
   - component: {fileID: 1642740137}
   - component: {fileID: 1642740136}
   m_Layer: 6
-  m_Name: Alvo 3 (1)
+  m_Name: Alvo 5
   m_TagString: Alvo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9447,7 +9443,7 @@ GameObject:
   - component: {fileID: 1780711868}
   - component: {fileID: 1780711867}
   m_Layer: 6
-  m_Name: Alvo 3 (2)
+  m_Name: Alvo 6
   m_TagString: Alvo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9845,7 +9841,7 @@ GameObject:
   - component: {fileID: 1824101981}
   - component: {fileID: 1824101980}
   m_Layer: 6
-  m_Name: Alvo 4
+  m_Name: Alvo 8
   m_TagString: Alvo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10639,7 +10635,7 @@ GameObject:
   - component: {fileID: 1995457608}
   - component: {fileID: 1995457607}
   m_Layer: 6
-  m_Name: Alvo 1 (1)
+  m_Name: Alvo 2
   m_TagString: Alvo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

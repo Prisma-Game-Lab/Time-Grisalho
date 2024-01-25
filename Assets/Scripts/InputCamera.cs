@@ -98,6 +98,7 @@ public class InputCamera : MonoBehaviour
 
     private void tiraFoto()
     {
+        Debug.Log("ESTOU SENDO ACESSADO (tiraFoto)");
         if (Input.GetMouseButtonDown(0))
         {
             this.GetComponent<BotoesUI_Gerenciador>().AtivaBotoes();
