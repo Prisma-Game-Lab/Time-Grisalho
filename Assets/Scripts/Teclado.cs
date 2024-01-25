@@ -30,7 +30,7 @@ public class Teclado : MonoBehaviour
         }
     }
 
-    public void Troca()
+    public void Album()
     {
         if (!camera_player.activeSelf)
         {
@@ -40,7 +40,7 @@ public class Teclado : MonoBehaviour
 
     public void Options()
     {
-        if (!camera_player.activeSelf)
+        if (!camera_player.activeSelf && !albumUI.activeInHierarchy)
         {
             buttonOptions.GetComponent<ButtonScript>().CliqueFaseParaOptions();
         }

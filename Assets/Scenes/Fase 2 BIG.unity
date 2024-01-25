@@ -3978,7 +3978,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 832578541}
         m_TargetAssemblyTypeName: Teclado, Assembly-CSharp
-        m_MethodName: Troca
+        m_MethodName: Album
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
