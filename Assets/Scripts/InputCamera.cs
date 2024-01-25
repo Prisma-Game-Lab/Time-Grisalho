@@ -189,23 +189,6 @@ public class InputCamera : MonoBehaviour
         }
     }
 
-    public void AtivaCamera()
-    {
-        if (!camera_player.activeSelf)
-        {
-            camera_player.SetActive(true);
-            camera__.SetActive(true);
-            GetComponent<BotoesUI_Gerenciador>().DesativaBotoes();
-        }
-        else
-        {
-            camera_player.SetActive(false);
-            camera__.SetActive(false);
-            GetComponent<BotoesUI_Gerenciador>().AtivaBotoes();
-            cameraSegueMouse();
-            tiraFoto();
-        }
-    }
     private void Awake()
     {
         if (Instancia == null)
@@ -230,7 +213,26 @@ public class InputCamera : MonoBehaviour
 
     void Update()
     {
-        // AtivaCamera();
+        if (!camera_player.activeSelf)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                camera_player.SetActive(true);
+                camera__.SetActive(true);
+                this.GetComponent<BotoesUI_Gerenciador>().DesativaBotoes();
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                camera_player.SetActive(false);
+                camera__.SetActive(false);
+                this.GetComponent<BotoesUI_Gerenciador>().AtivaBotoes();
+            }
+            cameraSegueMouse();
+            tiraFoto();
+        }
     }
     private void LateUpdate()
     {
