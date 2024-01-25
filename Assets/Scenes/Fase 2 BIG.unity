@@ -3464,8 +3464,7 @@ MonoBehaviour:
   lBotoesUI:
   - {fileID: 2004748603}
   - {fileID: 1439116247}
-  - {fileID: 2137461471}
-  - {fileID: 2006217354}
+  - {fileID: 1662125273}
 --- !u!114 &729640090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4024,19 +4023,7 @@ MonoBehaviour:
     m_ActionId: 9e4e8882-7f2f-4234-a5dc-e266fe967278
     m_ActionName: Teclado/Options[/Keyboard/escape]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 729640091}
-        m_TargetAssemblyTypeName: InputCamera, Assembly-CSharp
-        m_MethodName: AtivaCamera
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: dc956c68-2298-4b01-97ec-24ce9d7080aa
     m_ActionName: "Teclado/C\xE2mera[/Keyboard/e]"
   m_NeverAutoSwitchControlSchemes: 0
@@ -8873,6 +8860,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1662125273 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3306223569916766887, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
+  m_PrefabInstance: {fileID: 1434887600}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1677605709
 GameObject:
   m_ObjectHideFlags: 0
@@ -10935,11 +10927,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0522535528b76764e9ba046fd240fb70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2006217354 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4196524954246121575, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
-  m_PrefabInstance: {fileID: 1434887600}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2040066884
 GameObject:
   m_ObjectHideFlags: 0
@@ -11437,11 +11424,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &2137461471 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3085924983144783544, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
-  m_PrefabInstance: {fileID: 1434887600}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
