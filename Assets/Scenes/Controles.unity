@@ -441,6 +441,10 @@ PrefabInstance:
       propertyPath: som
       value: 
       objectReference: {fileID: 8300000, guid: 3e85b6cdfcbacb9479c186284770e5dc, type: 3}
+    - target: {fileID: 468928042127726978, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
+      propertyPath: proximaCena
+      value: MainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 5184059516798378437, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
       propertyPath: m_Name
       value: Voltar
@@ -452,14 +456,14 @@ PrefabInstance:
     - target: {fileID: 6364596569179810556, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2142388763}
+      objectReference: {fileID: 2142388768}
     - target: {fileID: 6364596569179810556, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Clique
       objectReference: {fileID: 0}
     - target: {fileID: 6364596569179810556, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: OptionsButton, Assembly-CSharp
+      value: ButtonScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7920225144100987373, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
       propertyPath: m_Pivot.x
@@ -541,8 +545,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -2.78
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 468928042127726978, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -819,12 +822,23 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142388760}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 033c00fd2ff114b4482bc06a8a71d47e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   som: {fileID: 8300000, guid: 3e85b6cdfcbacb9479c186284770e5dc, type: 3}
+--- !u!114 &2142388768 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 468928042127726978, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
+  m_PrefabInstance: {fileID: 1598311872}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142388760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0522535528b76764e9ba046fd240fb70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
