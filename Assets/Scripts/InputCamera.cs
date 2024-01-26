@@ -98,7 +98,6 @@ public class InputCamera : MonoBehaviour
 
     private void tiraFoto()
     {
-        Debug.Log("ESTOU SENDO ACESSADO (tiraFoto)");
         if (Input.GetMouseButtonDown(0))
         {
             this.GetComponent<BotoesUI_Gerenciador>().AtivaBotoes();
@@ -121,27 +120,6 @@ public class InputCamera : MonoBehaviour
                     fonte.clip = feedback_positivo;
                     fonte.Play();
                 }
-                //for (int i = 0; i < quantidadeDeFotos; i++)
-                //{
-                //    if (!ljaTirouFotos[i])
-                //    {
-                //        if (areaFoto.GetComponent<BoxCollider2D>().bounds.Intersects(lAlvos[i].GetComponent<CircleCollider2D>().bounds))
-                //       {
-                //            Debug.Log("tirou foto certo!");
-                //            lfotosTiradas[i] = SaveCameraFoto.Instancia.CaptureScreen();
-                //            SaveCameraFoto.Instancia.ShowsTakenPicture(SaveCameraFoto.Instancia.CaptureScreen());
-                //            Desativa_Ativa_CertoErrado.Instancia.Ativa_Certo_Errado(1);
-                //            StartCoroutine(waiter_certo());
-                //           ljaTirouFotos[i] = true; break;
-                //        }
-                //    }
-                //}
-                // ADICIONAR COMPARAÇÃO PRA SABER QUAL DOS ALVOS TIROU FOTO A PARTIR DAS LISTAS!!
-                /*
-                                Debug.Log("tirou foto certo!");
-                                SaveCameraFoto.Instancia.ShowsTakenPicture(SaveCameraFoto.Instancia.CaptureScreen());
-                                Desativa_Ativa_CertoErrado.Instancia.Ativa_Certo_Errado(1);
-                                StartCoroutine(waiter_certo());*/
             }
             else
             {
