@@ -9,7 +9,7 @@ public class ConcluiFase : MonoBehaviour
     [SerializeField]
     private ScenesManager gerenciadorDeCena;
     [SerializeField]
-    private float timer;
+    private float timer_fimdejogo;
     private IEnumerator coroutine;
     private void Start()
     {
@@ -23,7 +23,7 @@ public class ConcluiFase : MonoBehaviour
 
     private IEnumerator Espera()
     {
-        yield return new WaitForSeconds(timer);
-        gerenciadorDeCena.GoToScene("Fim");
+        yield return new WaitForSeconds(timer_fimdejogo);
+        GameObject.Find("Main Camera").GetComponent<VaiParaAlbumTelaFim>().ativaTelaDeFim();
     }
 }
