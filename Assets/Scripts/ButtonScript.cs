@@ -36,7 +36,8 @@ public class ButtonScript : MonoBehaviour
             if (proximaCena == "Options" && SceneManager.GetActiveScene().name != "Controles")
             {
                 OptionsButton.cenaAnteriorOptions = SceneManager.GetActiveScene().name;
-            } if (proximaCena == "Options do Controle")
+            }
+            if (proximaCena == "Options do Controle")
             {
                 scenesManager.GoToScene("Options");
                 fonte.Play();
@@ -47,7 +48,7 @@ public class ButtonScript : MonoBehaviour
             fonte.Play();
         }
     }
-    
+
     private void cliqueOptionsInGame()
     {
         if (proximaCena == "Controles")
@@ -78,7 +79,7 @@ public class ButtonScript : MonoBehaviour
         GameObject.Find("Troca de Cena Fase Manager").GetComponent<FaseEOptionsLoadingManager>().estaNaFase = false;
         GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = false;
         GameObject.Find("EventSystem").GetComponent<EventSystem>().enabled = false;
-        SceneManager.LoadScene(proximaCena, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync(proximaCena, LoadSceneMode.Additive);
         fonte.Play();
     }
 
