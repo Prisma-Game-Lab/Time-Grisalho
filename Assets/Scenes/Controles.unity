@@ -443,7 +443,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 3e85b6cdfcbacb9479c186284770e5dc, type: 3}
     - target: {fileID: 468928042127726978, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
       propertyPath: proximaCena
-      value: MainMenu
+      value: Options do Controle
       objectReference: {fileID: 0}
     - target: {fileID: 5184059516798378437, guid: c7b6803d569d53d44aa32713b63ff042, type: 3}
       propertyPath: m_Name
@@ -790,7 +790,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 9d8235dbfbe0ef140b816e36d8bf45ca, type: 3}
+  m_Texture: {fileID: 2800000, guid: 0743611e2e5e95f45bf38c99b627d5ef, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
