@@ -9,6 +9,7 @@ public class InputCamera : MonoBehaviour
 {
     public static InputCamera Instancia;
     public Vector3 posMouse;
+    [SerializeField]
     private GameObject camera_player, areaFoto, camera__; // camera que o player puxa pra tirar foto, area efetiva da foto, alvo da foto
     private Vector2 topLeft, bottomRight;
     public TextMeshProUGUI txtBtn_LigaDeslCam;
