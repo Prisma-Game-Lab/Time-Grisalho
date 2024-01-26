@@ -3467,6 +3467,7 @@ MonoBehaviour:
   - {fileID: 2004748603}
   - {fileID: 1439116247}
   - {fileID: 1662125273}
+  - {fileID: 1963469161}
 --- !u!114 &729640090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3492,6 +3493,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posMouse: {x: 0, y: 0, z: 0}
+  camera_player: {fileID: 0}
+  areaFoto: {fileID: 0}
+  camera__: {fileID: 0}
   txtBtn_LigaDeslCam: {fileID: 0}
   quadrado_preto: {fileID: 835252637}
   limite: 7
@@ -7156,6 +7160,10 @@ PrefabInstance:
       propertyPath: proximaCena
       value: Options
       objectReference: {fileID: 0}
+    - target: {fileID: 2193988230632211549, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 50262b93189595d40a56e95b09e945ff, type: 3}
     - target: {fileID: 2465909746692693774, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 3029
@@ -7276,6 +7284,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 4.220353
       objectReference: {fileID: 0}
+    - target: {fileID: 4905143425685343764, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 781db88acedab7c438fc9188002f6b22, type: 3}
     - target: {fileID: 5328774848508478987, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.97874993
@@ -10510,6 +10522,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1963469161 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4196524954246121575, guid: 98105f282baa4d246844ebd04ccd71dc, type: 3}
+  m_PrefabInstance: {fileID: 1434887600}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1970920575
 GameObject:
   m_ObjectHideFlags: 0

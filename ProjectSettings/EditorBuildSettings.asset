@@ -29,7 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Controles.unity
     guid: ea4fd348756d7a0459a01240dc78cc36
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Fase 1 BIG.unity
     guid: 5b40eb149d44a374bb91f3ffe653af9b
   - enabled: 1
